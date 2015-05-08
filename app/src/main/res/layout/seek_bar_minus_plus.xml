@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.engstuff.coloriphornia.components.views.SeekBarButton
+        android:id="@+id/minus_red"
+        style="@style/seek_bar_btn_style_abstract"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/ic_chevron_left_black_24dp" />
+
+    <SeekBar
+        android:layout_width="0dp"
+        android:id="@+id/seek_bar_group"
+        android:layout_height="34dp"
+        android:layout_weight="1"
+        android:max="@integer/sbMax"
+        android:layout_centerInParent="true"
+        android:maxHeight="1000dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:thumbOffset="@dimen/thumb_offset" />
+
+    <com.engstuff.coloriphornia.components.views.SeekBarButton
+        android:id="@+id/plus_red"
+        style="@style/seek_bar_btn_style_abstract"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/ic_chevron_right_black_24dp" />
+
+</merge>

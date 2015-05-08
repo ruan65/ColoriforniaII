@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Colorifornia</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Drawer opened</string>
+    <string name="drawer_close">Drawer closed</string>
+    <!-- Preferences -->
+    <string name="pref_key_user_learned_drawer">user_learned_drawer</string>
+    <string name="not_first_time">notFirstTimeAppStarts</string>
+    <string name="color">color</string>
+    <string name="btn_back">\u21a9</string>
+    <string name="save_color">Save color (also via "V" or double click)</string>
+    <string name="erase">Clear saved colors</string>
+    <string name="ok">OK</string>
+    <string name="no">Cancel</string>
+    <string name="share">Share color</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="prefs_emails">Emails for sharing</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_del_selected">Delete selected</string>
+    <string name="btn_add_new">Add new</string>
+
+    <string name="dial_title_add_email">Add email for color sharing</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="sb_emails">Email(s):\n</string>
+    <string name="sb_no_emails">\nNo emails to delete...</string>
+    <string name="sb_wb_deleted">\n\nwill be deleted</string>
+    <string name="dial_title_del_emails">Deleting emails</string>
+    <string name="new_line">\n</string>
+    <string name="toast_email">"email: "</string>
+    <string name="toast_hb_saved">" has been saved"</string>
+    <string name="title_activity_color_from_image">ColorFromImage</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="select_picture">Select Picture</string>
+    <string name="file_not_found">File not found...</string>
+    <string name="title_activity_color_round_control_c">Colorifornia</string>
+    <string name="settings_label">Colorifornia Settings</string>
+    <string name="title_activity_app_settings">Settings</string>
+    <string name="prefs_user_saved_emails">user_saved_emails</string>
+    <string name="email_body_header"><![CDATA[<h3>Colors chosen via \"Colorifornia\" mobile app: </h3>]]></string>
+    <string name="swap_menu_button_fail_toast_text">History stack is empty. Use \"Navigation drawer\".</string>
+    <string name="ctx_to_prev_screen">To previous screen</string>
+    <string name="ctx_undo">undo</string>
+    <string name="ctx_discard">discard selected</string>
+    <string name="ctx_select">selection</string>
+    <string name="email_creating_error">Something went wrong while creating email. Try again please. </string>
+    <string name="email_error_no_selected">There is nothing to send. Select needed colors and repeat.</string>
+    <string name="prefs_title">Edit emails</string>
+    <string name="prers_summary">Adding/deleting emails for sending colors params</string>
+    <string name="alpha">"alpha: "</string>
+    <string name="red">"red: "</string>
+    <string name="green">"green: "</string>
+    <string name="blue">"blue: "</string>
+    <string name="open_image">Open Image</string>
+    <string name="prefs_alpha_mode">alpha_mode</string>
+    <string name="title_activity_font_and_background">Colorifornia</string>
+</resources>

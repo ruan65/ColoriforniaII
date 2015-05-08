@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primaryColor">#8BC34A</color>
+    <color name="primaryColorDark">#689F38</color>
+    <color name="primaryColorDarkTransparent">#55689F38</color>
+    <color name="accentColor">#795548</color>
+
+    <color name="seek_progress">#88FFFFFF</color>
+    <color name="dk_green">#FF008800</color>
+
+</resources>
