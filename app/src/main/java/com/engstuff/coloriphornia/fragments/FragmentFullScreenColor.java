@@ -124,7 +124,9 @@ public class FragmentFullScreenColor extends Fragment {
 
         cardWidgetForInfo.setCardBackgroundColor(backCardColor);
 
-        int textColor = whiteText ? Color.WHITE : Color.BLACK;
+        int textColor = hexFontColorString != null
+                ? (int) Long.parseLong(hexFontColorString.substring(1), 16)
+                : whiteText ? Color.WHITE : Color.BLACK;
 
         infoText.setTextColor(textColor);
         infoText.setText(Html.fromHtml(hexFontColorString == null

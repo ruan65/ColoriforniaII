@@ -175,8 +175,7 @@ public class FontAndBackgroundActivity extends BaseColorActivity {
 
         fullColorStarted = true;
 
-        AppHelper.startFullColorC(this, box.getHexColorParams(),
-                ColorParams.makeHexInfo(mText.getCurrentTextColor()));
+        AppHelper.startFullColorC(this, box.getHexColorParams(), getHexFont());
     }
 
     @Override
