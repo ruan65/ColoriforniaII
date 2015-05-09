@@ -50,16 +50,17 @@ public class AppHelper {
         boolean isColorSaved = false;
 
         for (String c : PrefsHelper.readFromPrefsAllToArray(ctx, Cv.SAVED_COLORS)) {
+
             if (c.equals(currentHexParams)) isColorSaved = true;
         }
 
         if (isColorSaved) {
+
             ImageView like = colorBox.getLike();
-            like.setImageResource(
-                    colorBox.isWhiteText()
+
+            like.setImageResource(colorBox.isWhiteText()
                             ? R.drawable.ic_loyalty_white_24dp
-                            : R.drawable.ic_loyalty_black_24dp
-            );
+                            : R.drawable.ic_loyalty_black_24dp);
 
             if (like.getParent() == null) colorBox.getLayout().addView(like);
         }
@@ -136,9 +137,8 @@ public class AppHelper {
         }
     }
 
-    public static String getDeviceGoogleEmail(Context context) {
-        AccountManager accountManager = AccountManager.get(context);
-        Account account = getAccount(accountManager);
+    public static String getDeviceGoogleEmail(Context context) {        Account account = getAccount(AccountManager.get(context));
+
         if (account == null) {
             return "";
         } else {
