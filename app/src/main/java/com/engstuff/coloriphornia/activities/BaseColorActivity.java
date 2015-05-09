@@ -112,14 +112,14 @@ public abstract class BaseColorActivity extends MockUpActivity implements
 
             case R.id.ctx_menu_share_color:
 
-                AppHelper.fireShareIntent(this, composeEmailBody(true, textColor));
+                AppHelper.fireShareIntent(this, composeEmailBody(true));
 
                 return true;
         }
         return super.onContextItemSelected(item);
     }
 
-    protected String composeEmailBody(boolean calledFromContextMenu, int fontColor) {
+    protected String composeEmailBody(boolean calledFromContextMenu) {
 
         StringBuilder result = new StringBuilder(getString(R.string.email_body_header));
 
@@ -132,12 +132,12 @@ public abstract class BaseColorActivity extends MockUpActivity implements
                 if (f.getClass().equals(FragmentColorBox.class)) {
 
                     result.append("<p>" + ColorParams.composeInfoHTML(
-                            ((FragmentColorBox) f).getHexColorParams(), fontColor) + "</p>");
+                            ((FragmentColorBox) f).getHexColorParams()) + "</p>");
                 }
             }
         } else {
             result.append("<p>" + ColorParams.composeInfoHTML(
-                    currentColorBox.getHexColorParams(), fontColor) + "</p>");
+                    currentColorBox.getHexColorParams()) + "</p>");
         }
         return result.toString();
     }
@@ -224,6 +224,8 @@ public abstract class BaseColorActivity extends MockUpActivity implements
 
     @Override
     public void onInfoClicked(FragmentColorBox box) {
+
+        fullColorStarted = true;
 
         changeFragment(box);
 

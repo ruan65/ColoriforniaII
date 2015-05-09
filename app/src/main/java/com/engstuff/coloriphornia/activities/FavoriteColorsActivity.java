@@ -276,7 +276,7 @@ public class FavoriteColorsActivity extends MockUpActivity {
     }
 
     @Override
-    protected String composeEmailBody(boolean calledFromContextMenu, int fontColor) {
+    protected String composeEmailBody(boolean calledFromContextMenu) {
 
         StringBuilder result = new StringBuilder(getString(R.string.email_body_header));
 
@@ -284,7 +284,7 @@ public class FavoriteColorsActivity extends MockUpActivity {
 
             if (fc.isChecked()) {
 
-                result.append("<p>" + ColorParams.composeInfoHTML(fc.hexString, fontColor) + "</p>");
+                result.append("<p>" + ColorParams.composeInfoHTML(fc.hexString) + "</p>");
             }
         }
         return result.toString();

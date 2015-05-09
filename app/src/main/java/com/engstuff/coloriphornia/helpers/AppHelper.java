@@ -35,9 +35,8 @@ public class AppHelper {
         Intent i = new Intent(activity, FullScreenColorC.class);
 
         i.putExtra(Cv.EXTRA_MESSAGE_COLOR_1, background);
-        i.putExtra(Cv.EXTRA_MESSAGE_TEXT_COLOR_1, ColorParams.blackOrWhiteText(background));
         i.putExtra(Cv.CALLED_FROM_FAVORITES, favorites.length > 0 && favorites[0]);
-        i.putExtra(Cv.EXTRA_MESSAGE_FONT_COLOR, font);
+//        i.putExtra(Cv.EXTRA_MESSAGE_FONT_COLOR, font);
 
         ((MockUpActivity) activity).setFullColorStarted(true);
         activity.startActivity(i);

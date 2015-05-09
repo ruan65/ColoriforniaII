@@ -93,7 +93,6 @@ public class ColorCC extends BaseColorActivity {
 
         Intent i = new Intent(this, FullScreenColorCC.class);
         i.putExtra(Cv.EXTRA_MESSAGE_COLOR_1, colorParams);
-        i.putExtra(Cv.EXTRA_MESSAGE_TEXT_COLOR_1, box.isWhiteText());
 
         int fragmentId = box.getId() == R.id.color_box_container
                 ? R.id.color_box_container2 : R.id.color_box_container;
@@ -103,7 +102,6 @@ public class ColorCC extends BaseColorActivity {
         String colorParams2 = box.getHexColorParams();
 
         i.putExtra(Cv.EXTRA_MESSAGE_COLOR_2, colorParams2);
-        i.putExtra(Cv.EXTRA_MESSAGE_TEXT_COLOR_2, box.isWhiteText());
 
         startActivity(i);
     }

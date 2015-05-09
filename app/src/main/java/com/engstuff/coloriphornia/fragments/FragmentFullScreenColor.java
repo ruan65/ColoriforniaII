@@ -32,43 +32,47 @@ public class FragmentFullScreenColor extends Fragment {
 
     private Activity activity;
     private String hexString;
-    private int textColor = -1;
 
     private Animation hideAnim, btnFadeInAnim, showAnim, btnFadeOutAnim;
 
     private final GestureDetector mGestureDetector = new GestureDetector(activity,
             new GestureDetector.SimpleOnGestureListener() {
 
-        private static final int DISTANCE_THRESHOLD = 100;
-        private static final int VELOCITY_THRESHOLD = 100;
+                private static final int DISTANCE_THRESHOLD = 100;
+                private static final int VELOCITY_THRESHOLD = 100;
 
-        @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                @Override
+                public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
 
-            float distanceX = e2.getX() - e1.getX();
-            float distanceY = e2.getY() - e1.getY();
+                    float distanceX = e2.getX() - e1.getX();
+                    float distanceY = e2.getY() - e1.getY();
 
-            if (Math.abs(distanceX) > Math.abs(distanceY)
-                    && Math.abs(distanceX) > DISTANCE_THRESHOLD
-                    && Math.abs(velocityX) > VELOCITY_THRESHOLD) {
+                    if (Math.abs(distanceX) > Math.abs(distanceY)
+                            && Math.abs(distanceX) > DISTANCE_THRESHOLD
+                            && Math.abs(velocityX) > VELOCITY_THRESHOLD) {
 
-                ((OnFlingListener) activity).onFling(distanceX < 0);
+                        ((OnFlingListener) activity).onFling(distanceX < 0);
 
-                return true;
-            }
-            return false;
-        }
-    });
+                        return true;
+                    }
+                    return false;
+                }
+            });
 
-    @InjectView(R.id.card_view_full_c) CardView cardWidgetForInfo;
+    @InjectView(R.id.card_view_full_c)
+    CardView cardWidgetForInfo;
 
-    @InjectView(R.id.tv_color_params) TextView infoText;
+    @InjectView(R.id.tv_color_params)
+    TextView infoText;
 
-    @InjectView(R.id.show_info_full_c) ImageView showInfo;
+    @InjectView(R.id.show_info_full_c)
+    ImageView showInfo;
 
-    @InjectView(R.id.close_info_full_c_card)ImageView closeInfo;
+    @InjectView(R.id.close_info_full_c_card)
+    ImageView closeInfo;
 
-    @InjectView(R.id.send_info_full_c) ImageView sendInfo;
+    @InjectView(R.id.send_info_full_c)
+    ImageView sendInfo;
 
     public FragmentFullScreenColor() {
     }
@@ -119,12 +123,10 @@ public class FragmentFullScreenColor extends Fragment {
 
         cardWidgetForInfo.setCardBackgroundColor(backCardColor);
 
-        if (textColor == -1) {
-            textColor = whiteText ? Color.WHITE : Color.BLACK;
-        }
+        int textColor = whiteText ? Color.WHITE : Color.BLACK;
 
         infoText.setTextColor(textColor);
-        infoText.setText(Html.fromHtml(ColorParams.composeInfoHTML(hexString, textColor)));
+        infoText.setText(Html.fromHtml(ColorParams.composeInfoHTML(hexString)));
 
         return root;
     }
@@ -175,7 +177,7 @@ public class FragmentFullScreenColor extends Fragment {
 
     @OnClick(R.id.send_info_full_c)
     public void sendInfo() {
-        AppHelper.fireShareIntent(activity, ColorParams.composeInfoHTML(hexString, textColor));
+        AppHelper.fireShareIntent(activity, ColorParams.composeInfoHTML(hexString));
     }
 
     @OnClick(R.id.layout_full_screen_color_fragment)
@@ -193,7 +195,4 @@ public class FragmentFullScreenColor extends Fragment {
         this.hexString = hexString;
     }
 
-    public void setTextColor(int color) {
-        textColor = color;
-    }
 }

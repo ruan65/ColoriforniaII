@@ -76,19 +76,19 @@ public class ColorParams {
         return "#" + Integer.toHexString(color);
     }
 
-    public static String composeInfoHTML(String hexColorString, int textColor) {
-
-        if (textColor == -1) {
-            return composeInfoHTML(hexColorString);
-        }
-
-        StringBuffer result = new StringBuffer("<b><u>Background color:</u></b><br/>");
-        result.append(composeInfoHTML(hexColorString));
-        result.append("<br/><br/><b><u>Font color:</u></b><br/>");
-        result.append(composeInfoHTML(makeHexInfo(textColor)));
-
-        return result.toString();
-    }
+//    public static String composeInfoHTML(String hexColorString, int textColor) {
+//
+//        if (textColor == -1) {
+//            return composeInfoHTML(hexColorString);
+//        }
+//
+//        StringBuffer result = new StringBuffer("<b><u>Background color:</u></b><br/>");
+//        result.append(composeInfoHTML(hexColorString));
+//        result.append("<br/><br/><b><u>Font color:</u></b><br/>");
+//        result.append(composeInfoHTML(makeHexInfo(textColor)));
+//
+//        return result.toString();
+//    }
 
     public static String composeInfoHTML(String hexColorString) {
 

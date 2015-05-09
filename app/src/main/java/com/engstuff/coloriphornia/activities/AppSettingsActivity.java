@@ -22,7 +22,7 @@ public class AppSettingsActivity extends MockUpActivity {
     }
 
     @Override
-    protected String composeEmailBody(boolean calledFromContextMenu, int fontColor) {
+    protected String composeEmailBody(boolean calledFromContextMenu) {
         return "";
     }
 

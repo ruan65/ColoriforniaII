@@ -158,7 +158,7 @@ public class FontAndBackgroundActivity extends BaseColorActivity {
 
         if (tuneColor) {
 
-            mText.setTextColor(textColor = fragmentControl.getColor());
+            mText.setTextColor(fragmentControl.getColor());
 
             if (unlockInfo) {
                 switchInfo(p, id);
@@ -184,6 +184,6 @@ public class FontAndBackgroundActivity extends BaseColorActivity {
 
     public void setTextColorOpaque() {
 
-        mText.setTextColor(textColor = (mText.getCurrentTextColor() | 0xff000000));
+        mText.setTextColor(mText.getCurrentTextColor() | 0xff000000);
     }
 }
