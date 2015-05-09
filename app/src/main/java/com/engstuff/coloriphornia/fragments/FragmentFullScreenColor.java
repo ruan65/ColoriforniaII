@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.engstuff.coloriphornia.R;
+import com.engstuff.coloriphornia.activities.FontAndBackgroundActivity;
 import com.engstuff.coloriphornia.helpers.AppHelper;
 import com.engstuff.coloriphornia.helpers.ColorParams;
 import com.engstuff.coloriphornia.interfaces.HideInfoListener;
@@ -31,7 +32,7 @@ import butterknife.OnTouch;
 public class FragmentFullScreenColor extends Fragment {
 
     private Activity activity;
-    private String hexString;
+    private String hexBackColorString, hexFontColorString;
 
     private Animation hideAnim, btnFadeInAnim, showAnim, btnFadeOutAnim;
 
@@ -95,7 +96,7 @@ public class FragmentFullScreenColor extends Fragment {
         boolean whiteText = false;
 
         try {
-            whiteText = ColorParams.blackOrWhiteText(hexString);
+            whiteText = ColorParams.blackOrWhiteText(hexBackColorString);
         } catch (Exception ignore) {
         }
 
@@ -114,10 +115,10 @@ public class FragmentFullScreenColor extends Fragment {
                         ? R.drawable.ic_send_white_36dp
                         : R.drawable.ic_send_black_36dp);
 
-        hexString = ColorParams.replaceNotValidHexForZeroColor(hexString);
+        hexBackColorString = ColorParams.replaceNotValidHexForZeroColor(hexBackColorString);
 
-        int backColor = (int) Long.parseLong(hexString.substring(1), 16);
-        int backCardColor = (int) Long.parseLong(hexString.substring(3), 16);
+        int backColor = (int) Long.parseLong(hexBackColorString.substring(1), 16);
+        int backCardColor = (int) Long.parseLong(hexBackColorString.substring(3), 16);
 
         container.setBackgroundColor(backColor);
 
@@ -126,7 +127,9 @@ public class FragmentFullScreenColor extends Fragment {
         int textColor = whiteText ? Color.WHITE : Color.BLACK;
 
         infoText.setTextColor(textColor);
-        infoText.setText(Html.fromHtml(ColorParams.composeInfoHTML(hexString)));
+        infoText.setText(Html.fromHtml(hexFontColorString == null
+                ? ColorParams.composeInfoHTML(hexBackColorString)
+                : ColorParams.composeInfoHTML(hexBackColorString, hexFontColorString)));
 
         return root;
     }
@@ -177,7 +180,14 @@ public class FragmentFullScreenColor extends Fragment {
 
     @OnClick(R.id.send_info_full_c)
     public void sendInfo() {
-        AppHelper.fireShareIntent(activity, ColorParams.composeInfoHTML(hexString));
+
+        if (null != hexFontColorString) {
+            AppHelper.fireShareIntent(activity,
+                    ColorParams.composeInfoHTML(hexBackColorString, hexFontColorString));
+        } else {
+            AppHelper.fireShareIntent(activity,
+                    ColorParams.composeInfoHTML(hexBackColorString));
+        }
     }
 
     @OnClick(R.id.layout_full_screen_color_fragment)
@@ -191,8 +201,11 @@ public class FragmentFullScreenColor extends Fragment {
         return mGestureDetector.onTouchEvent(ev);
     }
 
-    public void setHexString(String hexString) {
-        this.hexString = hexString;
+    public void setHexBackColorString(String hexBackColorString) {
+        this.hexBackColorString = hexBackColorString;
     }
 
+    public void setHexFontColorString(String hexFontColorString) {
+        this.hexFontColorString = hexFontColorString;
+    }
 }

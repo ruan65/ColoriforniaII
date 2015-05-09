@@ -24,11 +24,11 @@ public class AppHelper {
 
     public static void startFullColorC(Activity activity, String hex, boolean... favorites) {
 
-        startFullColorC(activity, hex, -1, favorites);
+        startFullColorC(activity, hex, null, favorites);
     }
 
     public static void startFullColorC(Activity activity,
-                                       String background, int font, boolean... favorites) {
+                                       String background, String font, boolean... favorites) {
 
         background = ColorParams.replaceNotValidHexForZeroColor(background);
 
@@ -36,7 +36,7 @@ public class AppHelper {
 
         i.putExtra(Cv.EXTRA_MESSAGE_COLOR_1, background);
         i.putExtra(Cv.CALLED_FROM_FAVORITES, favorites.length > 0 && favorites[0]);
-//        i.putExtra(Cv.EXTRA_MESSAGE_FONT_COLOR, font);
+        i.putExtra(Cv.EXTRA_MESSAGE_FONT_COLOR, font);
 
         ((MockUpActivity) activity).setFullColorStarted(true);
         activity.startActivity(i);
@@ -157,20 +157,20 @@ public class AppHelper {
         } return account;
     }
 
-    public static void fireShareIntent(Context ctx, String html) {
+    public static void fireShareIntent(Activity activity, String html) {
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
         emailIntent.setType("message/rfc822");
 
         emailIntent.putExtra(Intent.EXTRA_EMAIL,
-                readFromPrefsAllToArray(ctx, Cv.SAVED_EMAILS));
+                readFromPrefsAllToArray(activity, Cv.SAVED_EMAILS));
 
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, Cv.EMAIL_SUBJ);
 
         emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(html));
 
-        ctx.startActivity(Intent.createChooser(emailIntent, Cv.CHOOSER_TITLE));
+        activity.startActivity(Intent.createChooser(emailIntent, Cv.CHOOSER_TITLE));
     }
 
     public static Uri resourceToUri (Context context,int resID) {

@@ -16,6 +16,7 @@ import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.fragments.FragmentNavDrawer;
 import com.engstuff.coloriphornia.helpers.AppHelper;
+import com.engstuff.coloriphornia.helpers.ColorParams;
 import com.engstuff.coloriphornia.helpers.PrefsHelper;
 
 public abstract class MockUpActivity extends ActionBarActivity {
@@ -106,7 +107,14 @@ public abstract class MockUpActivity extends ActionBarActivity {
             case R.id.send:
 
                 try {
-                    AppHelper.fireShareIntent(this, composeEmailBody(false));
+                    if (this.getClass().equals(FontAndBackgroundActivity.class)) {
+                        AppHelper.fireShareIntent(this,
+                                ColorParams.composeInfoHTML(
+                                        ((FontAndBackgroundActivity) this).getHexBackground(),
+                                        ((FontAndBackgroundActivity) this).getHexFont()));
+                    } else {
+                        AppHelper.fireShareIntent(this, composeEmailBody(false));
+                    }
                 } catch (Exception e) {
                     Toast.makeText(this, getString(R.string.email_creating_error),
                             Toast.LENGTH_SHORT).show();

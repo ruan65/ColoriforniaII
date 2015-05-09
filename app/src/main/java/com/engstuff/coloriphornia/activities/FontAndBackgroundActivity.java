@@ -13,6 +13,7 @@ import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.fragments.FragmentColorBox;
 import com.engstuff.coloriphornia.fragments.SeekBarsColorControlFragment;
 import com.engstuff.coloriphornia.helpers.AppHelper;
+import com.engstuff.coloriphornia.helpers.ColorParams;
 import com.engstuff.coloriphornia.helpers.PrefsHelper;
 
 public class FontAndBackgroundActivity extends BaseColorActivity {
@@ -174,7 +175,8 @@ public class FontAndBackgroundActivity extends BaseColorActivity {
 
         fullColorStarted = true;
 
-        AppHelper.startFullColorC(this, box.getHexColorParams(), mText.getCurrentTextColor());
+        AppHelper.startFullColorC(this, box.getHexColorParams(),
+                ColorParams.makeHexInfo(mText.getCurrentTextColor()));
     }
 
     @Override
@@ -185,5 +187,13 @@ public class FontAndBackgroundActivity extends BaseColorActivity {
     public void setTextColorOpaque() {
 
         mText.setTextColor(mText.getCurrentTextColor() | 0xff000000);
+    }
+
+    public String getHexBackground() {
+        return fragmentColorBox.getHexColorParams();
+    }
+
+    public String getHexFont() {
+        return ColorParams.makeHexInfo(mText.getCurrentTextColor());
     }
 }

@@ -227,8 +227,6 @@ public abstract class BaseColorActivity extends MockUpActivity implements
 
         fullColorStarted = true;
 
-        changeFragment(box);
-
         AppHelper.startFullColorC(this, box.getHexColorParams());
     }
 

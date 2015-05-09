@@ -21,8 +21,8 @@ public class FullScreenColorCC extends Activity implements OnFlingListener {
         FragmentFullScreenColor fragment1 = new FragmentFullScreenColor();
         FragmentFullScreenColor fragment2 = new FragmentFullScreenColor();
 
-        fragment1.setHexString(intent.getStringExtra(Cv.EXTRA_MESSAGE_COLOR_1));
-        fragment2.setHexString(intent.getStringExtra(Cv.EXTRA_MESSAGE_COLOR_2));
+        fragment1.setHexBackColorString(intent.getStringExtra(Cv.EXTRA_MESSAGE_COLOR_1));
+        fragment2.setHexBackColorString(intent.getStringExtra(Cv.EXTRA_MESSAGE_COLOR_2));
 
         getFragmentManager().beginTransaction()
                 .add(R.id.frame_full_screen_color_1, fragment1)

@@ -30,7 +30,7 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
         Intent intent = getIntent();
 
         String startedColor = intent.getStringExtra(Cv.EXTRA_MESSAGE_COLOR_1);
-
+        String fontColor = intent.getStringExtra(Cv.EXTRA_MESSAGE_FONT_COLOR);
         calledFromFavorites = intent.getBooleanExtra(Cv.CALLED_FROM_FAVORITES, false);
 
         if (calledFromFavorites) {
@@ -39,7 +39,7 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
             position = savedColorsSet.indexOf(startedColor);
         }
 
-        performFragmentTransaction(prepareFragment(startedColor));
+        performFragmentTransaction(prepareFragment(startedColor, fontColor));
     }
 
     @Override
@@ -59,16 +59,19 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
                     : position > 0 ? savedColorsSet.get(--position)
                     : savedColorsSet.get(position = savedColorsSet.size() - 1);
 
-            performFragmentTransaction(prepareFragment(hex));
+            performFragmentTransaction(prepareFragment(hex, null));
         }
     }
 
-    private FragmentFullScreenColor prepareFragment(String background) {
+    private FragmentFullScreenColor prepareFragment(String background, String font) {
 
         FragmentFullScreenColor fragment = new FragmentFullScreenColor();
 
-        fragment.setHexString(background);
+        fragment.setHexBackColorString(background);
 
+        if (null != font) {
+            fragment.setHexFontColorString(font);
+        }
         return fragment;
     }
 
