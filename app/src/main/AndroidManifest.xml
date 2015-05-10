@@ -82,7 +82,10 @@
         <activity
             android:name=".activities.FontAndBackgroundActivity"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".activities.FontAndBackgroundSolidActivity"
+            android:label="@string/title_activity_font_and_background_solid" >
+        </activity>
     </application>
 
 </manifest>
