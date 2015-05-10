@@ -1,11 +1,8 @@
 package com.engstuff.coloriphornia.activities;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.engstuff.coloriphornia.R;
@@ -19,37 +16,14 @@ import com.engstuff.coloriphornia.helpers.PrefsHelper;
 public class FontAndBackgroundSolidActivity extends BaseColorActivity {
 
     private TextView mText;
-    private SeekBar mSeekBar;
 
     private boolean tuneColor;
-    private boolean bold, italic;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mText = (TextView) findViewById(R.id.font_color);
-
-        mSeekBar = (SeekBar) findViewById(R.id.seek_bar_text_zoom);
-
-        mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int p, boolean fromUser) {
-
-                mText.setTextSize(TypedValue.COMPLEX_UNIT_SP, interpolate(p));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
 
         fragmentControl = new SeekBarsColorControlFragment();
 
@@ -58,17 +32,6 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
                 .add(R.id.color_control_container, fragmentControl)
                 .add(R.id.color_box_container, fragmentColorBox)
                 .commit();
-    }
-
-    /**
-     * Since I want non linear text sizing
-     * @param n taken from SeekBar progress
-     * @return float value accepted by TextView.setTextSize()
-     */
-    private float interpolate(int n) {
-
-        float k = n / 10f;
-        return k * k + 10f;
     }
 
     @Override
@@ -80,8 +43,6 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
 
         mText.setTextColor(PrefsHelper.readFromPrefsInt(
                 this, Cv.PREFS_RETAIN, Cv.LAST_COLOR_FONT));
-
-        mText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, interpolate(mSeekBar.getProgress()));
 
         unlockInfo = true;
     }
@@ -103,11 +64,7 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
 
         boolean rv = super.onCreateOptionsMenu(menu);
-
         tuneTextIcon.setVisible(true);
-        boldIcon.setVisible(true);
-        italicIcon.setVisible(true);
-
         return rv;
     }
 
@@ -129,26 +86,6 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
 
                 fragmentControl.setControls(tuneColor
                         ? currentTextColor : color);
-                break;
-
-            case R.id.text_bold:
-
-                bold = !bold;
-                if (italic) {
-                    mText.setTypeface(null, bold ? Typeface.BOLD_ITALIC : Typeface.ITALIC);
-                } else {
-                    mText.setTypeface(null, bold ? Typeface.BOLD : Typeface.NORMAL);
-                }
-                break;
-
-            case R.id.text_italic:
-
-                italic = !italic;
-                if (bold) {
-                    mText.setTypeface(null, italic ? Typeface.BOLD_ITALIC : Typeface.BOLD);
-                } else {
-                    mText.setTypeface(null, italic ? Typeface.ITALIC : Typeface.NORMAL);
-                }
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -180,7 +117,7 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
 
     @Override
     protected int getLayoutResource() {
-        return R.layout.activity_font_and_background;
+        return R.layout.activity_font_and_background_solid;
     }
 
     public void setTextColorOpaque() {

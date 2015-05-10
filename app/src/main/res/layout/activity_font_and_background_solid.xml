@@ -22,20 +22,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-            <SeekBar
-                android:id="@+id/seek_bar_text_zoom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="100dp"
-                android:paddingBottom="15dp"
-                android:paddingTop="15dp"
-                android:progress="40"
-                android:progressDrawable="@drawable/empty_seek_bar"
-                android:thumb="@drawable/thumb_text_black"
-                android:thumbOffset="-3dp" />
-
             <ScrollView
                 android:id="@+id/scroller_id"
                 android:layout_width="wrap_content"
