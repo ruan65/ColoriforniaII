@@ -47,11 +47,11 @@
                 <TextView
                     android:id="@+id/font_color"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:gravity="center_vertical"
                     android:padding="10dp"
-                    android:text="@string/dummy_text" />
+                    android:text="@string/dummy_text_citation" />
 
             </ScrollView>
 

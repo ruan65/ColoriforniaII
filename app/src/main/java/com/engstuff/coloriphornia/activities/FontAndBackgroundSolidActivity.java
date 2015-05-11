@@ -3,6 +3,7 @@ package com.engstuff.coloriphornia.activities;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.engstuff.coloriphornia.R;
@@ -44,6 +45,9 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
         mText.setTextColor(PrefsHelper.readFromPrefsInt(
                 this, Cv.PREFS_RETAIN, Cv.LAST_COLOR_FONT));
 
+        fragmentColorBox.getInfo().setVisibility(View.INVISIBLE);
+        fragmentColorBox.getLike().setVisibility(View.INVISIBLE);
+
         unlockInfo = true;
     }
 
@@ -65,6 +69,7 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
 
         boolean rv = super.onCreateOptionsMenu(menu);
         tuneTextIcon.setVisible(true);
+        menuInfo.setVisible(true);
         return rv;
     }
 
@@ -86,6 +91,11 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
 
                 fragmentControl.setControls(tuneColor
                         ? currentTextColor : color);
+                break;
+
+            case R.id.info_menu:
+
+                fragmentColorBox.infoClick();
                 break;
         }
         return super.onOptionsItemSelected(item);

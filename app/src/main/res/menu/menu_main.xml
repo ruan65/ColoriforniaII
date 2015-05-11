@@ -81,4 +81,12 @@
         android:title="@string/open_image"
         android:visible="false"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/info_menu"
+        android:icon="@drawable/ic_info_white"
+        android:orderInCategory="35"
+        android:title="@string/open_image"
+        android:visible="false"
+        app:showAsAction="always" />
 </menu>
