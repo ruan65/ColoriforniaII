@@ -15,7 +15,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="@integer/color_box_weight">
+            android:layout_weight="38">
 
             <FrameLayout
                 android:id="@+id/color_box_container"
@@ -35,12 +35,10 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:gravity="center_vertical"
-                    android:padding="10dp"
-                    android:text="@string/dummy_text_citation" />
+                    android:textSize="18sp"
+                    android:padding="10dp" />
 
             </ScrollView>
-
-            <include layout="@layout/seek_progress_info" />
 
         </RelativeLayout>
 
@@ -48,7 +46,7 @@
             android:id="@+id/color_control_container"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="@integer/control_weight_low" />
+            android:layout_weight="62" />
 
     </LinearLayout>
 

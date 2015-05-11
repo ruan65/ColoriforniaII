@@ -50,8 +50,7 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:gravity="center_vertical"
-                    android:padding="10dp"
-                    android:text="@string/dummy_text_citation" />
+                    android:padding="10dp" />
 
             </ScrollView>
 

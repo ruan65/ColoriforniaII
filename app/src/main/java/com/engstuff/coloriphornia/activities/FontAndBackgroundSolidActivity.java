@@ -1,6 +1,7 @@
 package com.engstuff.coloriphornia.activities;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.fragments.FragmentColorBox;
+import com.engstuff.coloriphornia.fragments.RoundColorControlFragment;
 import com.engstuff.coloriphornia.fragments.SeekBarsColorControlFragment;
 import com.engstuff.coloriphornia.helpers.AppHelper;
 import com.engstuff.coloriphornia.helpers.ColorParams;
@@ -26,7 +28,9 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
 
         mText = (TextView) findViewById(R.id.font_color);
 
-        fragmentControl = new SeekBarsColorControlFragment();
+        mText.setText(Html.fromHtml(Cv.dummy_text_html));
+
+        fragmentControl = new RoundColorControlFragment();
 
         getFragmentManager().beginTransaction()
 
@@ -107,13 +111,9 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
         if (tuneColor) {
 
             mText.setTextColor(fragmentControl.getColor());
-
-            if (unlockInfo) {
-                switchInfo(p, id);
-                animInfoAndGone();
-            }
-        } else {
-            super.onColorControlChange(p, id);
+        }
+        else {
+            currentColorBox.setColorParams().changeColor();
         }
     }
 

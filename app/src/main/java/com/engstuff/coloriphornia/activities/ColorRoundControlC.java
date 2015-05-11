@@ -21,8 +21,6 @@ public class ColorRoundControlC extends BaseColorActivity {
                 .add(R.id.color_control_container_round, fragmentControl)
                 .add(R.id.color_box_container_round, fragmentColorBox)
                 .commit();
-
-
     }
 
     @Override

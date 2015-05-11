@@ -2,6 +2,7 @@ package com.engstuff.coloriphornia.activities;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -80,6 +81,8 @@ public class FontAndBackgroundActivity extends BaseColorActivity {
 
         mText.setTextColor(PrefsHelper.readFromPrefsInt(
                 this, Cv.PREFS_RETAIN, Cv.LAST_COLOR_FONT));
+
+        mText.setText(Html.fromHtml(Cv.dummy_citation_html));
 
         mText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, interpolate(mSeekBar.getProgress()));
 
