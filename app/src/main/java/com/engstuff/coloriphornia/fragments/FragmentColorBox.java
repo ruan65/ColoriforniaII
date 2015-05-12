@@ -3,6 +3,7 @@ package com.engstuff.coloriphornia.fragments;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.WallpaperManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.gesture.Gesture;
@@ -10,8 +11,10 @@ import android.gesture.GestureLibraries;
 import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
 import android.gesture.Prediction;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -33,6 +36,7 @@ import com.engstuff.coloriphornia.helpers.ColorParams;
 import com.engstuff.coloriphornia.helpers.Logging;
 import com.engstuff.coloriphornia.interfaces.ColorBoxEventListener;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
@@ -121,11 +125,16 @@ public class FragmentColorBox extends Fragment {
                     Prediction prediction = recognized.get(0);
 
                     if (prediction.score > 1.5 && prediction.name.equals(Cv.G_YES)) {
+
                         performColorSave();
+
                     } else if (prediction.score > 1.5
                             && (prediction.name.equals(Cv.G_NEXT) || prediction.name.equals(Cv.G_PREV))) {
+
                         infoClick();
+
                     } else if (prediction.score > 1.75 || prediction.name.startsWith(Cv.G_HEART)) {
+
                         showWallpaperDialog();
                     }
                 }
@@ -145,6 +154,7 @@ public class FragmentColorBox extends Fragment {
         like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 activity.startActivity(new Intent(activity, FavoriteColorsActivity.class));
             }
         });
@@ -162,6 +172,22 @@ public class FragmentColorBox extends Fragment {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        DisplayMetrics metrics = new DisplayMetrics();
+                        activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+                        WallpaperManager wm = WallpaperManager.getInstance(activity);
+
+                        Bitmap wallPaint = Bitmap.createBitmap(
+                                metrics.widthPixels, metrics.heightPixels, Bitmap.Config.ARGB_8888);
+
+                        wallPaint.eraseColor(colorHex);
+
+                        try {
+                            wm.setBitmap(wallPaint);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
                     }
                 })
