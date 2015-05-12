@@ -1,7 +1,9 @@
 package com.engstuff.coloriphornia.fragments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.gesture.Gesture;
 import android.gesture.GestureLibraries;
@@ -10,6 +12,7 @@ import android.gesture.GestureOverlayView;
 import android.gesture.Prediction;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -27,6 +30,7 @@ import com.engstuff.coloriphornia.activities.BaseColorActivity;
 import com.engstuff.coloriphornia.activities.FavoriteColorsActivity;
 import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.helpers.ColorParams;
+import com.engstuff.coloriphornia.helpers.Logging;
 import com.engstuff.coloriphornia.interfaces.ColorBoxEventListener;
 
 import java.util.ArrayList;
@@ -41,13 +45,12 @@ public class FragmentColorBox extends Fragment {
 
     private ColorBoxEventListener colorBoxEventListener;
 
-    Activity activity;
+    private Activity activity;
 
-    GestureOverlayView gestureLayer;
-    GestureDetector gestureDetector;
-    GestureLibrary gestureLibrary;
+    private GestureDetector gestureDetector;
+    private GestureLibrary gestureLibrary;
 
-    Animation likeAnim;
+    private Animation likeAnim;
 
     @InjectView(R.id.color_box_layout) RelativeLayout layout;
 
@@ -90,7 +93,7 @@ public class FragmentColorBox extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        gestureLayer = (GestureOverlayView) inflater
+        GestureOverlayView gestureLayer = (GestureOverlayView) inflater
                 .inflate(R.layout.fragment_color_box, container, false);
 
         ButterKnife.inject(this, gestureLayer);
@@ -122,6 +125,8 @@ public class FragmentColorBox extends Fragment {
                     } else if (prediction.score > 1.5
                             && (prediction.name.equals(Cv.G_NEXT) || prediction.name.equals(Cv.G_PREV))) {
                         infoClick();
+                    } else if (prediction.score > 1.75 || prediction.name.startsWith(Cv.G_HEART)) {
+                        showWallpaperDialog();
                     }
                 }
             }
@@ -146,6 +151,26 @@ public class FragmentColorBox extends Fragment {
         layout.removeView(like);
 
         return gestureLayer;
+    }
+
+    private void showWallpaperDialog() {
+
+        new AlertDialog.Builder(activity, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT)
+                .setTitle("Set Wallpaper")
+                .setMessage("The current color will be set as a Wallpaper on your device.")
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // ignore
+                    }
+                }).show();
     }
 
     @Override

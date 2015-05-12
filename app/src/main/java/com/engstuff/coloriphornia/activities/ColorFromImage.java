@@ -86,6 +86,7 @@ public class ColorFromImage extends BaseColorActivity
 
         String stringUriCurrentImage = PrefsHelper.readFromPrefsString(this,
                 Cv.PREFS_RETAIN, Cv.CURRENT_IMAGE);
+
         String currentHex = PrefsHelper.readFromPrefsString(this,
                 Cv.PREFS_RETAIN, Cv.CURRENT_COLOR_IMG);
 

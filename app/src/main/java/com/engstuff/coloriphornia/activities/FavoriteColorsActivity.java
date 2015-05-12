@@ -205,7 +205,7 @@ public class FavoriteColorsActivity extends MockUpActivity {
 
             case R.id.bin:
 
-                new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_LIGHT)
+                new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT)
                         .setTitle("Discard checked")
                         .setMessage(
                                 fColorsList.size() > 0 && !areAllUnchecked()
@@ -232,8 +232,7 @@ public class FavoriteColorsActivity extends MockUpActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 // ignore
                             }
-                        })
-                        .show();
+                        }).show();
                 break;
 
             case R.id.send:

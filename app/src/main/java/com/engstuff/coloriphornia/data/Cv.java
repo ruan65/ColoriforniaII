@@ -25,6 +25,7 @@ public interface Cv {
     String G_YES = "yes";
     String G_NEXT = "next";
     String G_PREV = "prev";
+    String G_HEART = "heart";
 
     String LAST_COLOR_BOX_1 = "last_color_box1";
     String LAST_COLOR_BOX_2 = "last_color_box2";
