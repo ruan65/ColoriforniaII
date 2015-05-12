@@ -163,11 +163,11 @@ public class FragmentColorBox extends Fragment {
         return gestureLayer;
     }
 
-    private void showWallpaperDialog() {
+    public void showWallpaperDialog() {
 
         new AlertDialog.Builder(activity, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT)
-                .setTitle("Set Wallpaper")
-                .setMessage("The current color will be set as a Wallpaper on your device.")
+                .setTitle(activity.getString(R.string.dialog_wallpaper_title))
+                .setMessage(activity.getString(R.string.dialog_wallpaper_message))
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
 
                     @Override
@@ -208,7 +208,7 @@ public class FragmentColorBox extends Fragment {
             colorBoxEventListener = (ColorBoxEventListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
-                    + " must implement ColorClickedListener");
+                    + activity.getString(R.string.err_impl_color_clicked_listener));
         }
     }
 

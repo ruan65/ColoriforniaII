@@ -59,4 +59,8 @@
     <string name="prefs_alpha_mode">alpha_mode</string>
     <string name="title_activity_font_and_background">Colorifornia</string>
     <string name="title_activity_font_and_background_solid">FontAndBackgroundSolidActivity</string>
+    <string name="dialog_wallpaper_title">Set Wallpaper</string>
+    <string name="dialog_wallpaper_message">The current color will be set as a Wallpaper on your device.</string>
+    <string name="err_impl_color_clicked_listener">" must implement ColorClickedListener"</string>
+    <string name="ctx_set_wallpaper">Set color as a Wallpaper</string>
 </resources>

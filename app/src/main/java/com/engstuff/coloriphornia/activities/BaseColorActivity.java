@@ -102,6 +102,7 @@ public abstract class BaseColorActivity extends MockUpActivity implements
     public boolean onContextItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+
             case R.id.ctx_menu_save_color:
 
                 saveColorToPrefs();
@@ -113,6 +114,12 @@ public abstract class BaseColorActivity extends MockUpActivity implements
             case R.id.ctx_menu_share_color:
 
                 AppHelper.fireShareIntent(this, composeEmailBody(true));
+
+                return true;
+
+            case R.id.ctx_menu_set_wallpaper:
+
+                currentColorBox.showWallpaperDialog();
 
                 return true;
         }
