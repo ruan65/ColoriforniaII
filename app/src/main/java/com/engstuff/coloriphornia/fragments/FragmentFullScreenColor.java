@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.text.Html;
+import android.view.ContextMenu;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -34,6 +35,8 @@ public class FragmentFullScreenColor extends Fragment {
     private String hexBackColorString, hexFontColorString;
 
     private Animation hideAnim, btnFadeInAnim, showAnim, btnFadeOutAnim;
+
+    private RelativeLayout root;
 
     private final GestureDetector mGestureDetector = new GestureDetector(activity,
             new GestureDetector.SimpleOnGestureListener() {
@@ -82,7 +85,7 @@ public class FragmentFullScreenColor extends Fragment {
 
         setRetainInstance(true);
 
-        RelativeLayout root = (RelativeLayout) inflater
+        root = (RelativeLayout) inflater
                 .inflate(R.layout.fragment_full_screen_color, container, false);
 
         ButterKnife.inject(this, root);
@@ -116,8 +119,8 @@ public class FragmentFullScreenColor extends Fragment {
 
         hexBackColorString = ColorParams.replaceNotValidHexForZeroColor(hexBackColorString);
 
-        int backColor = (int) Long.parseLong(hexBackColorString.substring(1), 16);
-        int backCardColor = (int) Long.parseLong(hexBackColorString.substring(3), 16);
+        int backColor = getColor();
+        int backCardColor = getColor() & 0x00111111;
 
         container.setBackgroundColor(backColor);
 
@@ -133,6 +136,13 @@ public class FragmentFullScreenColor extends Fragment {
                 : ColorParams.composeInfoHTML(hexBackColorString, hexFontColorString)));
 
         return root;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        activity.registerForContextMenu(root);
     }
 
     @Override
@@ -208,5 +218,9 @@ public class FragmentFullScreenColor extends Fragment {
 
     public void setHexFontColorString(String hexFontColorString) {
         this.hexFontColorString = hexFontColorString;
+    }
+
+    public int getColor() {
+        return (int) Long.parseLong(hexBackColorString.substring(1), 16);
     }
 }

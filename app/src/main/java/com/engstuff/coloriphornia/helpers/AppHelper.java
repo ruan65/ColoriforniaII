@@ -3,11 +3,16 @@ package com.engstuff.coloriphornia.helpers;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.text.Html;
+import android.util.DisplayMetrics;
 import android.widget.ImageView;
 
 import com.engstuff.coloriphornia.R;
@@ -17,6 +22,8 @@ import com.engstuff.coloriphornia.activities.MockUpActivity;
 import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.fragments.ColorControlAbstractFragment;
 import com.engstuff.coloriphornia.fragments.FragmentColorBox;
+
+import java.io.IOException;
 
 import static com.engstuff.coloriphornia.helpers.PrefsHelper.readFromPrefsAllToArray;
 
@@ -179,5 +186,41 @@ public class AppHelper {
                 context.getResources().getResourcePackageName(resID) + '/' +
                 context.getResources().getResourceTypeName(resID) + '/' +
                 context.getResources().getResourceEntryName(resID) );
+    }
+
+    public static void showWallpaperDialog(final Activity act, final int color) {
+
+        new AlertDialog.Builder(act, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT)
+                .setTitle(act.getString(R.string.dialog_wallpaper_title))
+                .setMessage(act.getString(R.string.dialog_wallpaper_message))
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        DisplayMetrics metrics = new DisplayMetrics();
+                        act.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+                        WallpaperManager wm = WallpaperManager.getInstance(act);
+
+                        Bitmap wallPaint = Bitmap.createBitmap(
+                                metrics.widthPixels, metrics.heightPixels, Bitmap.Config.ARGB_8888);
+
+                        wallPaint.eraseColor(color);
+
+                        try {
+                            wm.setBitmap(wallPaint);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // ignore
+                    }
+                }).show();
     }
 }

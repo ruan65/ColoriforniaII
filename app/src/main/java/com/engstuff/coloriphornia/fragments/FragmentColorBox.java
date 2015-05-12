@@ -15,7 +15,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -32,8 +31,8 @@ import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.activities.BaseColorActivity;
 import com.engstuff.coloriphornia.activities.FavoriteColorsActivity;
 import com.engstuff.coloriphornia.data.Cv;
+import com.engstuff.coloriphornia.helpers.AppHelper;
 import com.engstuff.coloriphornia.helpers.ColorParams;
-import com.engstuff.coloriphornia.helpers.Logging;
 import com.engstuff.coloriphornia.interfaces.ColorBoxEventListener;
 
 import java.io.IOException;
@@ -135,7 +134,7 @@ public class FragmentColorBox extends Fragment {
 
                     } else if (prediction.score > 1.75 || prediction.name.startsWith(Cv.G_HEART)) {
 
-                        showWallpaperDialog();
+                        AppHelper.showWallpaperDialog(activity, colorHex);
                     }
                 }
             }
@@ -163,41 +162,7 @@ public class FragmentColorBox extends Fragment {
         return gestureLayer;
     }
 
-    public void showWallpaperDialog() {
 
-        new AlertDialog.Builder(activity, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT)
-                .setTitle(activity.getString(R.string.dialog_wallpaper_title))
-                .setMessage(activity.getString(R.string.dialog_wallpaper_message))
-                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        DisplayMetrics metrics = new DisplayMetrics();
-                        activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
-
-                        WallpaperManager wm = WallpaperManager.getInstance(activity);
-
-                        Bitmap wallPaint = Bitmap.createBitmap(
-                                metrics.widthPixels, metrics.heightPixels, Bitmap.Config.ARGB_8888);
-
-                        wallPaint.eraseColor(colorHex);
-
-                        try {
-                            wm.setBitmap(wallPaint);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                })
-                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // ignore
-                    }
-                }).show();
-    }
 
     @Override
     public void onAttach(Activity activity) {

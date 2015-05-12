@@ -119,7 +119,7 @@ public abstract class BaseColorActivity extends MockUpActivity implements
 
             case R.id.ctx_menu_set_wallpaper:
 
-                currentColorBox.showWallpaperDialog();
+                AppHelper.showWallpaperDialog(this, currentColorBox.getColor());
 
                 return true;
         }

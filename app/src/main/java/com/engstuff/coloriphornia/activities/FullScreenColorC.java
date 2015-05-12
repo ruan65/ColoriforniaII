@@ -4,10 +4,14 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.View;
 
 import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.fragments.FragmentFullScreenColor;
+import com.engstuff.coloriphornia.helpers.AppHelper;
 import com.engstuff.coloriphornia.helpers.PrefsHelper;
 import com.engstuff.coloriphornia.interfaces.HideInfoListener;
 import com.engstuff.coloriphornia.interfaces.OnFlingListener;
@@ -21,6 +25,8 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
     private List<String> savedColorsSet;
     private int position;
     private boolean hideInfoFlag;
+
+    private FragmentFullScreenColor fragmentFullScreenColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +45,33 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
             position = savedColorsSet.indexOf(startedColor);
         }
 
-        performFragmentTransaction(prepareFragment(startedColor, fontColor));
+        fragmentFullScreenColor = prepareFragment(startedColor, fontColor);
+        performFragmentTransaction(fragmentFullScreenColor);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         overridePendingTransition(R.anim.slide_in_l, R.anim.slide_out_l);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.context_menu_full_screen, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.ctx_menu_set_wallpaper:
+
+                AppHelper.showWallpaperDialog(this, fragmentFullScreenColor.getColor());
+                return true;
+        }
+        return super.onContextItemSelected(item);
     }
 
     @Override
