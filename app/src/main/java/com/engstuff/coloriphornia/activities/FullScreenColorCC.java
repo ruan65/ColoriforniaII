@@ -38,6 +38,6 @@ public class FullScreenColorCC extends Activity implements OnFlingListener {
 
     @Override
     public void onFling(boolean next) {
-        // ignore
+        finish();
     }
 }

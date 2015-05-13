@@ -9,6 +9,7 @@ import android.text.Html;
 import android.view.ContextMenu;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +20,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.engstuff.coloriphornia.R;
+import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.helpers.AppHelper;
 import com.engstuff.coloriphornia.helpers.ColorParams;
+import com.engstuff.coloriphornia.helpers.PrefsHelper;
 import com.engstuff.coloriphornia.interfaces.HideInfoListener;
 import com.engstuff.coloriphornia.interfaces.OnFlingListener;
 
@@ -83,12 +86,12 @@ public class FragmentFullScreenColor extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        setRetainInstance(true);
-
         root = (RelativeLayout) inflater
                 .inflate(R.layout.fragment_full_screen_color, container, false);
 
         ButterKnife.inject(this, root);
+
+        registerForContextMenu(root);
 
         hideAnim = AnimationUtils.loadAnimation(activity, R.anim.info_close);
         showAnim = AnimationUtils.loadAnimation(activity, R.anim.info_open);
@@ -142,7 +145,7 @@ public class FragmentFullScreenColor extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        activity.registerForContextMenu(root);
+
     }
 
     @Override
@@ -199,6 +202,33 @@ public class FragmentFullScreenColor extends Fragment {
             AppHelper.fireShareIntent(activity,
                     ColorParams.composeInfoHTML(hexBackColorString));
         }
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+
+        menu.clear();
+        activity.getMenuInflater().inflate(R.menu.context_menu_full_screen, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.ctx_menu_set_wallpaper:
+
+                AppHelper.showWallpaperDialog(activity, getColor());
+                return true;
+
+            case R.id.ctx_menu_save_color_full:
+
+                PrefsHelper.writeToPrefs(activity, Cv.SAVED_COLORS,
+                        hexBackColorString, getColor());
+
+                return true;
+        }
+        return false;
     }
 
     @OnClick(R.id.layout_full_screen_color_fragment)

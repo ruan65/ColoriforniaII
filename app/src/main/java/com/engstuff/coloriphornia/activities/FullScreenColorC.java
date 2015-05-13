@@ -4,14 +4,10 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.MenuItem;
-import android.view.View;
 
 import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.fragments.FragmentFullScreenColor;
-import com.engstuff.coloriphornia.helpers.AppHelper;
 import com.engstuff.coloriphornia.helpers.PrefsHelper;
 import com.engstuff.coloriphornia.interfaces.HideInfoListener;
 import com.engstuff.coloriphornia.interfaces.OnFlingListener;
@@ -26,6 +22,8 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
     private int position;
     private boolean hideInfoFlag;
 
+    String startedColor = "";
+
     private FragmentFullScreenColor fragmentFullScreenColor;
 
     @Override
@@ -35,7 +33,7 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
 
         Intent intent = getIntent();
 
-        String startedColor = intent.getStringExtra(Cv.EXTRA_MESSAGE_COLOR_1);
+        startedColor = intent.getStringExtra(Cv.EXTRA_MESSAGE_COLOR_1);
         String fontColor = intent.getStringExtra(Cv.EXTRA_MESSAGE_FONT_COLOR);
         calledFromFavorites = intent.getBooleanExtra(Cv.CALLED_FROM_FAVORITES, false);
 
@@ -56,25 +54,6 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
     }
 
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        getMenuInflater().inflate(R.menu.context_menu_full_screen, menu);
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-
-            case R.id.ctx_menu_set_wallpaper:
-
-                AppHelper.showWallpaperDialog(this, fragmentFullScreenColor.getColor());
-                return true;
-        }
-        return super.onContextItemSelected(item);
-    }
-
-    @Override
     public void onFling(boolean next) {
 
         if (calledFromFavorites && savedColorsSet.size() > 0 && position != -1) {
@@ -86,7 +65,7 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
                     : savedColorsSet.get(position = savedColorsSet.size() - 1);
 
             performFragmentTransaction(prepareFragment(hex, null));
-        }
+        } else finish();
     }
 
     private FragmentFullScreenColor prepareFragment(String background, String font) {

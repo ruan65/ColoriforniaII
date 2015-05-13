@@ -63,4 +63,5 @@
     <string name="dialog_wallpaper_message">The current color will be set as a Wallpaper on your device.</string>
     <string name="err_impl_color_clicked_listener">" must implement ColorClickedListener"</string>
     <string name="ctx_set_wallpaper">Set color as a Wallpaper</string>
+    <string name="save_to_favorites">Save to favorites</string>
 </resources>
