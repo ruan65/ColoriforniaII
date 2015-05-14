@@ -66,9 +66,6 @@ public class FragmentColorBox extends Fragment {
     int colorHex;
     int alpha, r, g, b; // alpha, red, green, blue
 
-    int width;
-    int height;
-
     private boolean whiteText;
 
     public FragmentColorBox() {

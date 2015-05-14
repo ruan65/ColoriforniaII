@@ -28,7 +28,7 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
 
         mText = (TextView) findViewById(R.id.font_color);
 
-        mText.setText(Html.fromHtml(Cv.dummy_text_html));
+        mText.setText(Html.fromHtml(getString(R.string.html_dummy_text)));
 
         fragmentControl = new RoundColorControlFragment();
 
@@ -51,7 +51,7 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
 
         mText.setTextColor(tColor == 0 ? Color.BLACK : tColor);
 
-        mText.setText(Html.fromHtml(Cv.dummy_text_html));
+        mText.setText(Html.fromHtml(getString(R.string.html_dummy_text)));
 
         fragmentColorBox.getInfo().setVisibility(View.INVISIBLE);
         fragmentColorBox.getLike().setVisibility(View.INVISIBLE);

@@ -59,4 +59,5 @@
     <string name="save_to_favorites">Save to favorites</string>
     <string name="err_creating_email" translatable="false">"Error while creating email: "</string>
     <string name="email_subject">Color parameters from \"Colorifornia\"</string>
+    <string name="choser_title">Send color(s) parameters...</string>
 </resources>

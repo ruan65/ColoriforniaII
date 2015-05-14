@@ -24,8 +24,6 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
 
     String startedColor = "";
 
-    private FragmentFullScreenColor fragmentFullScreenColor;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +41,7 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
             position = savedColorsSet.indexOf(startedColor);
         }
 
-        fragmentFullScreenColor = prepareFragment(startedColor, fontColor);
+        FragmentFullScreenColor fragmentFullScreenColor = prepareFragment(startedColor, fontColor);
         performFragmentTransaction(fragmentFullScreenColor);
     }
 

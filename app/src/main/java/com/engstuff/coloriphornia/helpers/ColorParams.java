@@ -85,7 +85,7 @@ public class ColorParams {
             return composeInfoHTML(ctx, hexColorString);
         }
 
-        StringBuffer result = new StringBuffer(ctx.getString(R.string.html_email_body_header));
+        StringBuilder result = new StringBuilder();
 
         result.append(ctx.getString(R.string.html_background));
         result.append(composeInfoHTML(ctx, hexColorString));

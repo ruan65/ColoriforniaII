@@ -82,7 +82,7 @@ public class FontAndBackgroundActivity extends BaseColorActivity {
         mText.setTextColor(PrefsHelper.readFromPrefsInt(
                 this, Cv.PREFS_RETAIN, Cv.LAST_COLOR_FONT));
 
-        mText.setText(Html.fromHtml(Cv.dummy_citation_html));
+        mText.setText(Html.fromHtml(getString(R.string.html_dummy_citation)));
 
         mText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, interpolate(mSeekBar.getProgress()));
 
