@@ -38,7 +38,7 @@
 
             <ScrollView
                 android:id="@+id/scroller_id"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/seek_bar_text_zoom"
                 android:layout_marginBottom="5dp"
