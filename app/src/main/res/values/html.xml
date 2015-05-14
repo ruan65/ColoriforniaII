@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="_"><![CDATA[
+
+    ]]></string>
+
+    <string name="html_email_body_header"><![CDATA[
+    <p><b>Colors chosen via \"Colorifornia\" mobile app: </b></p>
+    ]]></string>
+
+    <string name="html_background"><![CDATA[
+        "<b><u>Background color:</u></b><br/>"
+    ]]></string>
+
+    <string name="html_font"><![CDATA[
+        "<br/><br/><b><u>Font color:</u></b><br/>"
+    ]]></string>
+
+</resources>

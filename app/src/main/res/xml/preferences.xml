@@ -5,7 +5,7 @@
     <Preference
         android:defaultValue=""
         android:key="@string/prefs_user_saved_emails"
-        android:summary="@string/prers_summary"
+        android:summary="@string/prefs_summary"
         android:title="@string/prefs_title" />
 
     <Preference

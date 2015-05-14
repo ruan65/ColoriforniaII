@@ -277,13 +277,13 @@ public class FavoriteColorsActivity extends MockUpActivity {
     @Override
     protected String composeEmailBody(boolean calledFromContextMenu) {
 
-        StringBuilder result = new StringBuilder(getString(R.string.email_body_header));
+        StringBuilder result = new StringBuilder(getString(R.string.html_email_body_header));
 
         for (FavoriteColor fc : fColorsList) {
 
             if (fc.isChecked()) {
 
-                result.append("<p>" + ColorParams.composeInfoHTML(fc.hexString) + "</p>");
+                result.append("<p>" + ColorParams.composeInfoHTML(this, fc.hexString) + "</p>");
             }
         }
         return result.toString();

@@ -9,7 +9,7 @@
     <string name="dial_title_del_emails">Удаление адресов</string>
     <string name="dialog_wallpaper_message">Сделать цвет фоном рабочего стола на устройстве</string>
     <string name="dialog_wallpaper_title">Настройка обоев</string>
-    <string name="email_body_header"><![CDATA[<h3>Приложение \"Colorifornia\", подобранные цвета: </h3>]]></string>
+
     <string name="email_creating_error">Не удалось добаить адресс. Попробуйте еще раз.</string>
     <string name="email_error_no_selected">Ничего не выбрано. Выберете цвета для отправки.</string>
     <string name="erase">Удалить отмеченные цвета</string>
@@ -17,7 +17,7 @@
     <string name="open_image">Открыть изображение</string>
     <string name="prefs_emails">Адреса для отправки цветов</string>
     <string name="prefs_title">Редактировать адреса</string>
-    <string name="prers_summary">Добавить/удалить адреса для отправки цветов</string>
+    <string name="prefs_summary">Добавить/удалить адреса для отправки цветов</string>
     <string name="save_color">Сохранить цвет</string>
     <string name="save_to_favorites">Сохранить цвет</string>
     <string name="sb_emails">Адрес(а)\n</string>
@@ -33,4 +33,10 @@
     <string name="ctx_discard">Удалить выбранные</string>
     <string name="ctx_to_prev_screen">К предыдущему экрану</string>
     <string name="ctx_undo">Отмена</string>
+    <string name="sb_wb_deleted">\n\nбудут удалены</string>
+    <string name="green">"зеленый: "</string>
+    <string name="red" translatable="false">"красный: "</string>
+    <string name="blue">"синий: "</string>
+    <string name="alpha">"альфа: "</string>
+    <string name="email_subject">Цвета подобранные с помощью \"Colorifornia\".</string>
 </resources>

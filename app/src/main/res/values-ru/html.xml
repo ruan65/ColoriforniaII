@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="html_email_body_header"><![CDATA[
+    <p><b>Приложение \"Colorifornia\", подобранные цвета: </b></p>
+    ]]></string>
+
+    <string name="html_background"><![CDATA[
+        "<b><u>Цвет фона:</u></b><br/>"
+    ]]></string>
+
+    <string name="html_font"><![CDATA[
+        "<br/><br/><b><u>Цвет шрифта:</u></b><br/>"
+    ]]></string>
+
+</resources>

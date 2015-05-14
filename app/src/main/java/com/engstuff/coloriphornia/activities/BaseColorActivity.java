@@ -128,7 +128,7 @@ public abstract class BaseColorActivity extends MockUpActivity implements
 
     protected String composeEmailBody(boolean calledFromContextMenu) {
 
-        StringBuilder result = new StringBuilder(getString(R.string.email_body_header));
+        StringBuilder result = new StringBuilder(getString(R.string.html_email_body_header));
 
         if (!calledFromContextMenu) {
 
@@ -138,12 +138,12 @@ public abstract class BaseColorActivity extends MockUpActivity implements
 
                 if (f.getClass().equals(FragmentColorBox.class)) {
 
-                    result.append("<p>" + ColorParams.composeInfoHTML(
+                    result.append("<p>" + ColorParams.composeInfoHTML(this,
                             ((FragmentColorBox) f).getHexColorParams()) + "</p>");
                 }
             }
         } else {
-            result.append("<p>" + ColorParams.composeInfoHTML(
+            result.append("<p>" + ColorParams.composeInfoHTML(this,
                     currentColorBox.getHexColorParams()) + "</p>");
         }
         return result.toString();

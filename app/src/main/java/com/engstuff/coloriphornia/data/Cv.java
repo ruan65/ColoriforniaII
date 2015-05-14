@@ -34,7 +34,6 @@ public interface Cv {
 
     String IMAGE_FRAGMENT_RETAINED = "retained_img_fragment";
     String LAST_COLOR = "last_color";
-    String EMAIL_SUBJ = "Color parameters from \"Colorifornia\"";
 
     String CHOOSER_TITLE = "Send color(s) parameters...";
 

@@ -131,8 +131,8 @@ public class FragmentFullScreenColor extends Fragment {
 
         infoText.setTextColor(textColor);
         infoText.setText(Html.fromHtml(hexFontColorString == null
-                ? ColorParams.composeInfoHTML(hexBackColorString)
-                : ColorParams.composeInfoHTML(hexBackColorString, hexFontColorString)));
+                ? ColorParams.composeInfoHTML(activity, hexBackColorString)
+                : ColorParams.composeInfoHTML(activity, hexBackColorString, hexFontColorString)));
 
         return root;
     }
@@ -206,10 +206,10 @@ public class FragmentFullScreenColor extends Fragment {
 
         if (null != hexFontColorString) {
             AppHelper.fireShareIntent(activity,
-                    ColorParams.composeInfoHTML(hexBackColorString, hexFontColorString));
+                    ColorParams.composeInfoHTML(activity, hexBackColorString, hexFontColorString));
         } else {
             AppHelper.fireShareIntent(activity,
-                    ColorParams.composeInfoHTML(hexBackColorString));
+                    ColorParams.composeInfoHTML(activity, hexBackColorString));
         }
     }
 

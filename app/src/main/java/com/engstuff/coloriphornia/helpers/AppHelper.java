@@ -173,7 +173,7 @@ public class AppHelper {
         emailIntent.putExtra(Intent.EXTRA_EMAIL,
                 readFromPrefsAllToArray(activity, Cv.SAVED_EMAILS));
 
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, Cv.EMAIL_SUBJ);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.email_subject));
 
         emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(html));
 

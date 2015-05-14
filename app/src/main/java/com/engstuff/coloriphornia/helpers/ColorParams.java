@@ -1,6 +1,9 @@
 package com.engstuff.coloriphornia.helpers;
 
+import android.content.Context;
 import android.graphics.Color;
+
+import com.engstuff.coloriphornia.R;
 
 public class ColorParams {
 
@@ -76,21 +79,23 @@ public class ColorParams {
         return "#" + Integer.toHexString(color);
     }
 
-    public static String composeInfoHTML(String hexColorString, String textColor) {
+    public static String composeInfoHTML(Context ctx, String hexColorString, String textColor) {
 
         if (textColor == null) {
-            return composeInfoHTML(hexColorString);
+            return composeInfoHTML(ctx, hexColorString);
         }
 
-        StringBuffer result = new StringBuffer("<b><u>Background color:</u></b><br/>");
-        result.append(composeInfoHTML(hexColorString));
-        result.append("<br/><br/><b><u>Font color:</u></b><br/>");
-        result.append(composeInfoHTML(textColor));
+        StringBuffer result = new StringBuffer(ctx.getString(R.string.html_email_body_header));
+
+        result.append(ctx.getString(R.string.html_background));
+        result.append(composeInfoHTML(ctx, hexColorString));
+        result.append(ctx.getString(R.string.html_font));
+        result.append(composeInfoHTML(ctx, textColor));
 
         return result.toString();
     }
 
-    public static String composeInfoHTML(String hexColorString) {
+    public static String composeInfoHTML(Context ctx, String hexColorString) {
 
         hexColorString = replaceNotValidHexForZeroColor(hexColorString);
 

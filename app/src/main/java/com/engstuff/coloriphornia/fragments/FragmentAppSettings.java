@@ -22,7 +22,7 @@ public class FragmentAppSettings extends PreferenceFragment {
 
         emailPref = findPreference(getString(R.string.prefs_user_saved_emails));
 
-        emailPref.setSummary(savedEmails() + "\n" + getString(R.string.prers_summary));
+        emailPref.setSummary(savedEmails() + "\n" + getString(R.string.prefs_summary));
 
         findPreference(getString(R.string.prefs_user_saved_emails))
                 .setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {

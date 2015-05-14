@@ -21,10 +21,10 @@ import com.engstuff.coloriphornia.helpers.PrefsHelper;
 
 public abstract class MockUpActivity extends ActionBarActivity {
 
-    Toolbar mToolbar;
-    DrawerLayout mDrawerLayout; // parent activity layout
-    View mDrawerView; // child drawer view
-    MenuItem binIcon, checkModeIcon, undoIcon, sendIcon, menuInfo,
+    protected Toolbar mToolbar;
+    protected DrawerLayout mDrawerLayout; // parent activity layout
+    protected View mDrawerView; // child drawer view
+    protected MenuItem binIcon, checkModeIcon, undoIcon, sendIcon, menuInfo,
             openPhotoIcon, tuneTextIcon, boldIcon, italicIcon;
 
     protected final Activity activity = this;
@@ -110,12 +110,12 @@ public abstract class MockUpActivity extends ActionBarActivity {
                 try {
                     if (this.getClass().equals(FontAndBackgroundActivity.class)) {
                         AppHelper.fireShareIntent(this,
-                                ColorParams.composeInfoHTML(
+                                ColorParams.composeInfoHTML(this,
                                         ((FontAndBackgroundActivity) this).getHexBackground(),
                                         ((FontAndBackgroundActivity) this).getHexFont()));
                     } else if (this.getClass().equals(FontAndBackgroundSolidActivity.class)) {
                         AppHelper.fireShareIntent(this,
-                                ColorParams.composeInfoHTML(
+                                ColorParams.composeInfoHTML(this,
                                         ((FontAndBackgroundSolidActivity) this).getHexBackground(),
                                         ((FontAndBackgroundSolidActivity) this).getHexFont()));
                     } else {
@@ -126,7 +126,7 @@ public abstract class MockUpActivity extends ActionBarActivity {
                             Toast.LENGTH_SHORT).show();
 
                     Log.e(getApplication().getPackageName(),
-                            "Error while creating email: " + e.getMessage());
+                            getString(R.string.err_creating_email) + e.getMessage());
                     e.printStackTrace();
                 } break;
 
