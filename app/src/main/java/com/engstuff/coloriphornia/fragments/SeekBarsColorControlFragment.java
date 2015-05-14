@@ -16,6 +16,7 @@ import android.widget.SeekBar;
 import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.activities.BaseColorActivity;
 import com.engstuff.coloriphornia.activities.FontAndBackgroundActivity;
+import com.engstuff.coloriphornia.activities.FontAndBackgroundSolidActivity;
 import com.engstuff.coloriphornia.components.views.SeekBarMinusPlus;
 import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.helpers.ColorParams;
@@ -107,6 +108,9 @@ public class SeekBarsColorControlFragment extends ColorControlAbstractFragment
         if (act.getClass().equals(FontAndBackgroundActivity.class)) {
 
             ((FontAndBackgroundActivity) act).setTextColorOpaque();
+        } else if (act.getClass().equals(FontAndBackgroundSolidActivity.class)) {
+
+            ((FontAndBackgroundSolidActivity) act).setTextColorOpaque();
         }
     }
 

@@ -113,6 +113,11 @@ public abstract class MockUpActivity extends ActionBarActivity {
                                 ColorParams.composeInfoHTML(
                                         ((FontAndBackgroundActivity) this).getHexBackground(),
                                         ((FontAndBackgroundActivity) this).getHexFont()));
+                    } else if (this.getClass().equals(FontAndBackgroundSolidActivity.class)) {
+                        AppHelper.fireShareIntent(this,
+                                ColorParams.composeInfoHTML(
+                                        ((FontAndBackgroundSolidActivity) this).getHexBackground(),
+                                        ((FontAndBackgroundSolidActivity) this).getHexFont()));
                     } else {
                         AppHelper.fireShareIntent(this, composeEmailBody(false));
                     }

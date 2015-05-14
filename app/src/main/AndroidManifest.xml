@@ -51,23 +51,12 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.FullScreenColorC"
-            android:parentActivityName=".activities.ColorC"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.ColorC" />
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.FullScreenColorCC"
-            android:parentActivityName=".activities.ColorCC"
-            android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.ColorCC" />
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.ColorRoundControlC"
-            android:label="@string/title_activity_color_round_control_c"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Colorifornia</string>
+    <string name="btn_add_new">Добавить адресс</string>
+    <string name="btn_cancel">Отмена</string>
+    <string name="btn_del_selected">Удалить выбранные</string>
+    <string name="btn_save">Сохранить</string>
+    <string name="dial_title_add_email">Добавить адрес</string>
+    <string name="dial_title_del_emails">Удаление адресов</string>
+    <string name="dialog_wallpaper_message">Сделать цвет фоном рабочего стола на устройстве</string>
+    <string name="dialog_wallpaper_title">Настройка обоев</string>
+    <string name="email_body_header"><![CDATA[<h3>Приложение \"Colorifornia\", подобранные цвета: </h3>]]></string>
+    <string name="email_creating_error">Не удалось добаить адресс. Попробуйте еще раз.</string>
+    <string name="email_error_no_selected">Ничего не выбрано. Выберете цвета для отправки.</string>
+    <string name="erase">Удалить отмеченные цвета</string>
+    <string name="no">Отмена</string>
+    <string name="open_image">Открыть изображение</string>
+    <string name="prefs_emails">Адреса для отправки цветов</string>
+    <string name="prefs_title">Редактировать адреса</string>
+    <string name="prers_summary">Добавить/удалить адреса для отправки цветов</string>
+    <string name="save_color">Сохранить цвет</string>
+    <string name="save_to_favorites">Сохранить цвет</string>
+    <string name="sb_emails">Адрес(а)\n</string>
+    <string name="sb_no_emails">\nНечего удалять</string>
+    <string name="select_picture">Выбрать изображение</string>
+    <string name="settings_label">Настройки</string>
+    <string name="share">Отправить цвет</string>
+    <string name="title_activity_app_settings">Настройки</string>
+    <string name="toast_email">"адрес:"</string>
+    <string name="toast_hb_saved">" сохранен"</string>
+    <string name="ctx_set_wallpaper">Сделать фоном рабочего стола</string>
+    <string name="ctx_select">Выбрать</string>
+    <string name="ctx_discard">Удалить выбранные</string>
+    <string name="ctx_to_prev_screen">К предыдущему экрану</string>
+    <string name="ctx_undo">Отмена</string>
+</resources>

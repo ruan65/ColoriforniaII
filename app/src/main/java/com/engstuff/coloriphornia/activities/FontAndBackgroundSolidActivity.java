@@ -1,5 +1,6 @@
 package com.engstuff.coloriphornia.activities;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.Menu;
@@ -11,7 +12,6 @@ import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.fragments.FragmentColorBox;
 import com.engstuff.coloriphornia.fragments.RoundColorControlFragment;
-import com.engstuff.coloriphornia.fragments.SeekBarsColorControlFragment;
 import com.engstuff.coloriphornia.helpers.AppHelper;
 import com.engstuff.coloriphornia.helpers.ColorParams;
 import com.engstuff.coloriphornia.helpers.PrefsHelper;
@@ -46,8 +46,12 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
         AppHelper.setColorToColorBox(this, Cv.LAST_BACKGROUND, fragmentControl, fragmentColorBox);
         AppHelper.setLikesAndInfo(this, fragmentColorBox);
 
-        mText.setTextColor(PrefsHelper.readFromPrefsInt(
-                this, Cv.PREFS_RETAIN, Cv.LAST_COLOR_FONT));
+        int tColor = PrefsHelper.readFromPrefsInt(
+                this, Cv.PREFS_RETAIN, Cv.LAST_COLOR_FONT);
+
+        mText.setTextColor(tColor == 0 ? Color.BLACK : tColor);
+
+        mText.setText(Html.fromHtml(Cv.dummy_text_html));
 
         fragmentColorBox.getInfo().setVisibility(View.INVISIBLE);
         fragmentColorBox.getLike().setVisibility(View.INVISIBLE);

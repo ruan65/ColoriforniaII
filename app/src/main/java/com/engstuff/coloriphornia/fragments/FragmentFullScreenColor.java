@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.engstuff.coloriphornia.R;
@@ -38,8 +37,6 @@ public class FragmentFullScreenColor extends Fragment {
     private String hexBackColorString, hexFontColorString;
 
     private Animation hideAnim, btnFadeInAnim, showAnim, btnFadeOutAnim;
-
-    private RelativeLayout root;
 
     private final GestureDetector mGestureDetector = new GestureDetector(activity,
             new GestureDetector.SimpleOnGestureListener() {
@@ -86,8 +83,7 @@ public class FragmentFullScreenColor extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        root = (RelativeLayout) inflater
-                .inflate(R.layout.fragment_full_screen_color, container, false);
+        View root = inflater.inflate(R.layout.fragment_full_screen_color, container, false);
 
         ButterKnife.inject(this, root);
 
@@ -142,10 +138,23 @@ public class FragmentFullScreenColor extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public boolean onContextItemSelected(MenuItem item) {
 
+        switch (item.getItemId()) {
 
+            case R.id.ctx_menu_set_wallpaper:
+
+                AppHelper.showWallpaperDialog(activity, getColor());
+                return true;
+
+            case R.id.ctx_menu_save_color_full:
+
+                PrefsHelper.writeToPrefs(activity, Cv.SAVED_COLORS,
+                        hexBackColorString, getColor());
+
+                return true;
+        }
+        return false;
     }
 
     @Override
@@ -209,26 +218,6 @@ public class FragmentFullScreenColor extends Fragment {
 
         menu.clear();
         activity.getMenuInflater().inflate(R.menu.context_menu_full_screen, menu);
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-
-            case R.id.ctx_menu_set_wallpaper:
-
-                AppHelper.showWallpaperDialog(activity, getColor());
-                return true;
-
-            case R.id.ctx_menu_save_color_full:
-
-                PrefsHelper.writeToPrefs(activity, Cv.SAVED_COLORS,
-                        hexBackColorString, getColor());
-
-                return true;
-        }
-        return false;
     }
 
     @OnClick(R.id.layout_full_screen_color_fragment)
