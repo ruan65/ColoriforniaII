@@ -204,11 +204,13 @@ public class FragmentFullScreenColor extends Fragment {
     @OnClick(R.id.send_info_full_c)
     public void sendInfo() {
 
+        String header = getString(R.string.html_email_body_header);
+
         if (null != hexFontColorString) {
-            AppHelper.fireShareIntent(activity,
+            AppHelper.fireShareIntent(activity, header +
                     ColorParams.composeInfoHTML(activity, hexBackColorString, hexFontColorString));
         } else {
-            AppHelper.fireShareIntent(activity,
+            AppHelper.fireShareIntent(activity, header +
                     ColorParams.composeInfoHTML(activity, hexBackColorString));
         }
     }

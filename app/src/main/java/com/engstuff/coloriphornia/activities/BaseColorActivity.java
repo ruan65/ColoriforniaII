@@ -128,7 +128,7 @@ public abstract class BaseColorActivity extends MockUpActivity implements
 
     protected String composeEmailBody(boolean calledFromContextMenu) {
 
-        StringBuilder result = new StringBuilder("<p>" + getString(R.string.html_email_body_header) + "</p>");
+        StringBuilder result = new StringBuilder(getString(R.string.html_email_body_header));
 
         if (!calledFromContextMenu) {
 

@@ -63,6 +63,7 @@ public abstract class MockUpActivity extends ActionBarActivity {
                 PrefsHelper.writeToPrefs(activity, Cv.SAVED_EMAILS,
                         AppHelper.getDeviceGoogleEmail(activity), null);
             } catch (Exception ignoreCosDoesNotMatter) {
+                ignoreCosDoesNotMatter.printStackTrace();
             }
 
         } else if (mDrawerLayout.isDrawerOpen(mDrawerView)) {
@@ -109,12 +110,12 @@ public abstract class MockUpActivity extends ActionBarActivity {
 
                 try {
                     if (this.getClass().equals(FontAndBackgroundActivity.class)) {
-                        AppHelper.fireShareIntent(this,
+                        AppHelper.fireShareIntent(this, getString(R.string.html_email_body_header) +
                                 ColorParams.composeInfoHTML(this,
                                         ((FontAndBackgroundActivity) this).getHexBackground(),
                                         ((FontAndBackgroundActivity) this).getHexFont()));
                     } else if (this.getClass().equals(FontAndBackgroundSolidActivity.class)) {
-                        AppHelper.fireShareIntent(this,
+                        AppHelper.fireShareIntent(this, getString(R.string.html_email_body_header) +
                                 ColorParams.composeInfoHTML(this,
                                         ((FontAndBackgroundSolidActivity) this).getHexBackground(),
                                         ((FontAndBackgroundSolidActivity) this).getHexFont()));
