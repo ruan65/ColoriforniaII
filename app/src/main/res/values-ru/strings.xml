@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Colorifornia</string>
-    <string name="btn_add_new">Добавить адресс</string>
+    <string name="btn_add_new">Добавить адрес</string>
     <string name="btn_cancel">Отмена</string>
     <string name="btn_del_selected">Удалить выбранные</string>
     <string name="btn_save">Сохранить</string>

@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ import static com.engstuff.coloriphornia.helpers.PrefsHelper.writeToPrefs;
 public class DialogFragmentSavedEmails extends DialogFragment {
 
     private Activity activity;
+    private Button neutralButton;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -50,9 +52,11 @@ public class DialogFragmentSavedEmails extends DialogFragment {
                                 } else {
                                     emailsToDelete.remove(emails[which]);
                                 }
+
+                                neutralButton.setEnabled(emailsToDelete.size() > 0 ? true : false);
                             }
                         })
-                .setNegativeButton(R.string.btn_ok, null)
+                .setNegativeButton(R.string.btn_cancel, null)
                 .setPositiveButton(R.string.btn_add_new, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -123,6 +127,17 @@ public class DialogFragmentSavedEmails extends DialogFragment {
                 });
 
         return builder.create();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        AlertDialog d = (AlertDialog) getDialog();
+        if (d != null) {
+            neutralButton = d.getButton(Dialog.BUTTON_NEUTRAL);
+            neutralButton.setEnabled(false);
+        }
     }
 
     private String text(int id) {
