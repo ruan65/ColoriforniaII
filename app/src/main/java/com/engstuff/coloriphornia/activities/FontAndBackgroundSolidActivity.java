@@ -99,6 +99,7 @@ public class FontAndBackgroundSolidActivity extends BaseColorActivity {
 
                 fragmentControl.setControls(tuneColor
                         ? currentTextColor : color);
+                ((RoundColorControlFragment) fragmentControl).getRoundControl().invalidate();
                 break;
 
             case R.id.info_menu:

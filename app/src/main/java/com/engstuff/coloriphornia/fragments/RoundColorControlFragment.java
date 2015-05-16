@@ -122,7 +122,7 @@ public class RoundColorControlFragment extends ColorControlAbstractFragment
         colorChangeListener.onColorControlStopTracking();
     }
 
-    public ActionButton getReset() {
-        return reset;
+    public RoundColorMaker getRoundControl() {
+        return roundControl;
     }
 }
