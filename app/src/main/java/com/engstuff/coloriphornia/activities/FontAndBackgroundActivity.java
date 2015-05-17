@@ -86,6 +86,8 @@ public class FontAndBackgroundActivity extends BaseColorActivity {
 
         mText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, interpolate(mSeekBar.getProgress()));
 
+
+
         unlockInfo = true;
     }
 

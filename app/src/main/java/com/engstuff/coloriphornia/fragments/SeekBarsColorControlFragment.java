@@ -2,6 +2,7 @@ package com.engstuff.coloriphornia.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -61,7 +62,17 @@ public class SeekBarsColorControlFragment extends ColorControlAbstractFragment
     public void onResume() {
         super.onResume();
 
-        alphaMode = PrefsHelper.readFromPrefsBoolean(act, act.getString(R.string.prefs_alpha_mode));
+        if (act.getClass().equals(FontAndBackgroundActivity.class)) {
+
+            String hex = ((FontAndBackgroundActivity) act).getHexBackground().toLowerCase();
+            String fontHex = ((FontAndBackgroundActivity) act).getHexFont().toLowerCase();
+
+            alphaMode = !hex.substring(1).startsWith("ff") || !fontHex.substring(1).startsWith("ff");
+        } else {
+
+            String hex = act.getCurrentColorBox().getHexColorParams();
+            alphaMode = !hex.substring(1).startsWith("ff");
+        }
 
         if (openAlpha != null) showAlpha(alphaMode);
     }
@@ -127,7 +138,7 @@ public class SeekBarsColorControlFragment extends ColorControlAbstractFragment
         openAlpha.setIcon(show ? R.drawable.ic_blur_off_white_36dp
                 : R.drawable.ic_blur_on_white_36dp);
 
-        PrefsHelper.writeToPrefsDefault(act, act.getString(R.string.prefs_alpha_mode), alphaMode = show);
+        alphaMode = show;
 
         if (!show) makeCurrentColorsOpaque();
     }

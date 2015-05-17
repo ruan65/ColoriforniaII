@@ -104,6 +104,7 @@ public class AppHelper {
                                           String prefsKey,
                                           ColorControlAbstractFragment control,
                                           FragmentColorBox color) {
+
         String hexColor = PrefsHelper.readFromPrefsString(
                 ctx, Cv.PREFS_RETAIN, prefsKey);
 

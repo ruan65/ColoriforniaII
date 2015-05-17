@@ -264,4 +264,8 @@ public abstract class BaseColorActivity extends MockUpActivity implements
     public TextView getProgressInfo() {
         return progress;
     }
+
+    public FragmentColorBox getCurrentColorBox() {
+        return currentColorBox;
+    }
 }
