@@ -261,7 +261,7 @@ public abstract class BaseColorActivity extends MockUpActivity implements
         return allAttachedFragments;
     }
 
-    public TextView getProgress() {
+    public TextView getProgressInfo() {
         return progress;
     }
 }
