@@ -1,5 +1,6 @@
 package com.engstuff.coloriphornia.activities;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Html;
@@ -82,11 +83,12 @@ public class FontAndBackgroundActivity extends BaseColorActivity {
         mText.setTextColor(PrefsHelper.readFromPrefsInt(
                 this, Cv.PREFS_RETAIN, Cv.LAST_COLOR_FONT));
 
-        mText.setText(Html.fromHtml(getString(R.string.html_dummy_citation)));
+        int tColor = PrefsHelper.readFromPrefsInt(
+                this, Cv.PREFS_RETAIN, Cv.LAST_COLOR_FONT);
+
+        mText.setTextColor(tColor == 0 ? Color.BLACK : tColor);
 
         mText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, interpolate(mSeekBar.getProgress()));
-
-
 
         unlockInfo = true;
     }
