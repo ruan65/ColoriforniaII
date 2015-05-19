@@ -178,7 +178,7 @@ public class AppHelper {
 
         emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(html));
 
-        activity.startActivity(Intent.createChooser(emailIntent, activity.getString(R.string.choser_title)));
+        activity.startActivity(Intent.createChooser(emailIntent, activity.getString(R.string.chooser_title)));
     }
 
     public static Uri resourceToUri (Context context,int resID) {

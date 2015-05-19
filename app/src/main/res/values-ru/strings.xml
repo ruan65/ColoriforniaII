@@ -39,5 +39,8 @@
     <string name="blue">"синий: "</string>
     <string name="alpha">"альфа: "</string>
     <string name="email_subject">Цвета подобранные с помощью \"Colorifornia\".</string>
-    <string name="choser_title">Отправка параметров цвета(ов)</string>
+    <string name="chooser_title">Отправка параметров цвета(ов)</string>
+    <string name="hint_op_image_title">Подсказка</string>
+    <string name="hint_op_image_msg">"Это картинка-заглушка. Для открытия актуального изображения нажмите иконку галереи.</string>
+
 </resources>

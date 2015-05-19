@@ -2,6 +2,7 @@ package com.engstuff.coloriphornia.activities;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -98,6 +99,8 @@ public class ColorFromImage extends BaseColorActivity
         } else {
             fragmentImg.getZiv().setImageBitmap(BitmapFactory.decodeResource(
                     getResources(), R.drawable.triangles));
+
+            showHintDialog();
         }
 
         if (!"".equals(currentHex)) {
@@ -109,6 +112,16 @@ public class ColorFromImage extends BaseColorActivity
             fragmentImg.getAim().setY(y);
         }
         AppHelper.setLikesAndInfo(this, fragmentColorBox);
+    }
+
+    private void showHintDialog() {
+
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.hint_op_image_title))
+                .setMessage(getString(R.string.hint_op_image_msg))
+                .setPositiveButton(getString(R.string.btn_ok), null)
+                .create()
+                .show();
     }
 
     @Override

@@ -59,5 +59,7 @@
     <string name="save_to_favorites">Save to favorites</string>
     <string name="err_creating_email" translatable="false">"Error while creating email: "</string>
     <string name="email_subject">Color parameters from \"Colorifornia\"</string>
-    <string name="choser_title">Send color(s) parameters...</string>
+    <string name="chooser_title">Send color(s) parameters...</string>
+    <string name="hint_op_image_title">Hint</string>
+    <string name="hint_op_image_msg">This is a stub image. To open an actual image, press "Gallery folder" icon on the action bar.</string>
 </resources>
