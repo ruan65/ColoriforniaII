@@ -80,15 +80,14 @@ public class FontAndBackgroundActivity extends BaseColorActivity {
         AppHelper.setColorToColorBox(this, Cv.LAST_BACKGROUND, fragmentControl, fragmentColorBox);
         AppHelper.setLikesAndInfo(this, fragmentColorBox);
 
-        mText.setTextColor(PrefsHelper.readFromPrefsInt(
-                this, Cv.PREFS_RETAIN, Cv.LAST_COLOR_FONT));
-
         int tColor = PrefsHelper.readFromPrefsInt(
                 this, Cv.PREFS_RETAIN, Cv.LAST_COLOR_FONT);
 
         mText.setTextColor(tColor == 0 ? Color.BLACK : tColor);
 
         mText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, interpolate(mSeekBar.getProgress()));
+
+        mText.setText(Html.fromHtml(getString(R.string.html_dummy_citation)));
 
         unlockInfo = true;
     }

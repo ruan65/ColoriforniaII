@@ -16,6 +16,7 @@ import android.util.DisplayMetrics;
 import android.widget.ImageView;
 
 import com.engstuff.coloriphornia.R;
+import com.engstuff.coloriphornia.activities.ColorC;
 import com.engstuff.coloriphornia.activities.ColorFromImage;
 import com.engstuff.coloriphornia.activities.FullScreenColorC;
 import com.engstuff.coloriphornia.activities.MockUpActivity;
@@ -131,7 +132,7 @@ public class AppHelper {
 
         } catch (ClassNotFoundException e) {
 
-            activityClass = ColorFromImage.class;
+            activityClass = ColorC.class;
         }
         if (activityClass.equals(ctx.getClass())) {
 
