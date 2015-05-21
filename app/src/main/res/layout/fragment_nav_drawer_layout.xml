@@ -16,7 +16,7 @@
         <at.markushi.ui.CircleButton
             android:id="@+id/btn_img"
             style="@style/nav_btn"
-            android:src="@drawable/ic_perm_media_white_24dp"
+            android:src="@drawable/ic_perm_media_white_36dp"
             app:cb_color="@color/primaryColor"
             app:cb_pressedRingWidth="8dip" />
 
@@ -51,7 +51,7 @@
         <at.markushi.ui.CircleButton
             android:id="@+id/btn_font"
             style="@style/nav_btn"
-            android:src="@drawable/ic_format_quote_white_48dp"
+            android:src="@drawable/ic_format_quote_white_36dp"
             app:cb_color="@color/primaryColor"
             app:cb_pressedRingWidth="8dip" />
 
