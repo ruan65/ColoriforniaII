@@ -30,7 +30,7 @@
         <at.markushi.ui.CircleButton
             android:id="@+id/btn_one_color"
             style="@style/nav_btn"
-            android:src="@drawable/ic_tune_white_48dp"
+            android:src="@drawable/ic_tune_white_36dp"
             app:cb_color="@color/primaryColor"
             app:cb_pressedRingWidth="8dip" />
 
