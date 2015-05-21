@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:onClick="resetAlphaAndSatur"
-        fab:button_color="#ff000000"
+        fab:button_color="#000"
         fab:button_colorPressed="#55555555"
         fab:image="@drawable/ic_sync_white_36dp"
         fab:image_size="36dp"
