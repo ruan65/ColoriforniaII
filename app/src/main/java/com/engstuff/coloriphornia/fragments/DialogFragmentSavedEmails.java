@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,6 +21,7 @@ import java.util.List;
 
 import static com.engstuff.coloriphornia.helpers.PrefsHelper.erasePrefs;
 import static com.engstuff.coloriphornia.helpers.PrefsHelper.readFromPrefsAllToArray;
+import static com.engstuff.coloriphornia.helpers.PrefsHelper.readFromPrefsString;
 import static com.engstuff.coloriphornia.helpers.PrefsHelper.writeToPrefs;
 
 public class DialogFragmentSavedEmails extends DialogFragment {
@@ -78,7 +80,7 @@ public class DialogFragmentSavedEmails extends DialogFragment {
 
                                         String newEmail = inputEmail.getText().toString();
 
-                                        writeToPrefs(activity, Cv.SAVED_EMAILS, newEmail, null);
+                                        writeToPrefs(activity, Cv.SAVED_EMAILS, newEmail, newEmail);
 
                                         Toast.makeText(activity, text(R.string.toast_email) + newEmail +
                                                 text(R.string.toast_hb_saved), Toast.LENGTH_SHORT).show();

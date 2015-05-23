@@ -3,6 +3,7 @@ package com.engstuff.coloriphornia.fragments;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.util.Log;
 
 import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.data.Cv;
@@ -39,6 +40,8 @@ public class FragmentAppSettings extends PreferenceFragment {
     private String savedEmails() {
 
         Set<String> strings = PrefsHelper.readFromPrefsAll(getActivity(), Cv.SAVED_EMAILS).keySet();
+
+        Log.d("ml", "savedEmails" + strings);
 
         StringBuilder sb = new StringBuilder();
 
