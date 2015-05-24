@@ -15,6 +15,8 @@ import com.engstuff.coloriphornia.interfaces.OnFlingListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
+
 public class FullScreenColorC extends Activity implements OnFlingListener, HideInfoListener {
 
     private boolean calledFromFavorites;
@@ -29,6 +31,7 @@ public class FullScreenColorC extends Activity implements OnFlingListener, HideI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_screen_color_c);
 
+        getWindow().setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN);
         Intent intent = getIntent();
 
         startedColor = intent.getStringExtra(Cv.EXTRA_MESSAGE_COLOR_1);

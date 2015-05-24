@@ -9,6 +9,8 @@ import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.fragments.FragmentFullScreenColor;
 import com.engstuff.coloriphornia.interfaces.OnFlingListener;
 
+import static android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN;
+
 public class FullScreenColorCC extends Activity implements OnFlingListener {
 
     @Override
@@ -16,6 +18,7 @@ public class FullScreenColorCC extends Activity implements OnFlingListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_screen_color_cc);
 
+        getWindow().setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN);
         Intent intent = getIntent();
 
         FragmentFullScreenColor fragment1 = new FragmentFullScreenColor();
