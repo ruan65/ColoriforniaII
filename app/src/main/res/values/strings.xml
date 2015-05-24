@@ -61,11 +61,41 @@
     <string name="chooser_title">Send color(s) parameters...</string>
     <string name="hint_op_image_title">Hint</string>
     <string name="hint_op_image_msg">This is a stub image. To open an actual image, press "Gallery folder" icon on the action bar.</string>
-    <string name="key_prefs_instruction" translatable="false">prefs_instruction</string>
+    <string name="key_prefs_help" translatable="false">prefs_instruction</string>
     <string name="prefs_help_title">Help</string>
     <string name="prefs_help_summary">Tips and tricks</string>
     <string name="prefs_title_about">About</string>
     <string name="prefs_summary_about">Info about Colorifornia App</string>
     <string name="prefs_contacts_summary">colorifornia@yahoo.com</string>
     <string name="prefs_contacts_title">Contacts</string>
+    <string name="key_prefs_about" translatable="false">key_prefs_about</string>
+    <string name="key_prefs_contacts" translatable="false">key_prefs_contacts</string>
+    <string name="dialog_about_title">About "Colorifornia" App</string>
+    <string name="dialog_about_message_ver">Version: </string>
+    <string name="info_about">
+
+        \"Colorifornia\" is a convenient tool for working and playing with colors:\n\n
+
+✓ You can easily create, adjust and compare colors\n
+✓ Save favorite colors\n
+✓ Customize font color to the background\n
+✓ Choose the right background to any color font\n
+✓ Send parameters of color(s) to any email (or via "Messengers")\n
+✓ Set any color as a "Wallpaper" of your device\n
+✓ You always have full info about your colors (ARGB, RGB, AHEX, HEX and HSV)\n
+✓ Restore color from parameters\n
+✓ Use device camera or gallery for picking colors from any image\n
+✓ To create any color the App has convenient controls (two variants)\n
+✓ Fast navigation within the "Colorifornia" via "Navigation drawer"\n
+✓ For convenience, you can use gesture control\n\n
+
+Dear users!\n
+        We\'ll be really glad if "Colorifornia" helps you resolve at least one of your problems.\n
+Is there something you don\'t like? Write an email to us - we will improve or fix it.\n
+If you need additional options or functionality - send us a letter and we\'ll try to provide it.\n\n
+
+colorifornia@yahoo.com\n
+Andrew (developer)
+
+    </string>
 </resources>

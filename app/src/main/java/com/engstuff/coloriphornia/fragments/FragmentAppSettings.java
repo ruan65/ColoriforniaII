@@ -1,16 +1,18 @@
 package com.engstuff.coloriphornia.fragments;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 
+import com.engstuff.coloriphornia.BuildConfig;
 import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.helpers.PrefsHelper;
 
 import java.util.Set;
 
-public class FragmentAppSettings extends PreferenceFragment {
+public class FragmentAppSettings extends PreferenceFragment implements Preference.OnPreferenceClickListener {
 
     Preference emailPref;
 
@@ -21,19 +23,15 @@ public class FragmentAppSettings extends PreferenceFragment {
         addPreferencesFromResource(R.xml.preferences);
 
         emailPref = findPreference(getString(R.string.prefs_user_saved_emails));
-
         emailPref.setSummary(savedEmails() + "\n" + getString(R.string.prefs_summary));
 
-        findPreference(getString(R.string.prefs_user_saved_emails))
-                .setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+        createPref(R.string.prefs_user_saved_emails, this);
+        createPref(R.string.key_prefs_about, this);
+    }
 
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-
-                        new DialogFragmentSavedEmails().show(getFragmentManager(), null);
-                        return true;
-                    }
-                });
+    private void createPref(int key, Preference.OnPreferenceClickListener l) {
+        findPreference(getString(key))
+                .setOnPreferenceClickListener(l);
     }
 
     private String savedEmails() {
@@ -46,5 +44,28 @@ public class FragmentAppSettings extends PreferenceFragment {
             sb.append(s + "\n");
         }
         return sb.toString();
+    }
+
+    @Override
+    public boolean onPreferenceClick(Preference preference) {
+
+        if (preference.getKey().equals(getString(R.string.prefs_user_saved_emails))) {
+
+            new DialogFragmentSavedEmails().show(getFragmentManager(), null);
+
+        } else if (preference.getKey().equals(getString(R.string.key_prefs_about))) {
+
+            String message = getString(R.string.dialog_about_message_ver) + " " 
+                    + BuildConfig.VERSION_NAME + "\n\n"
+                    + getString(R.string.info_about);
+
+            new AlertDialog.Builder(getActivity())
+                    .setTitle(getString(R.string.dialog_about_title))
+                    .setMessage(message)
+                    .setPositiveButton(getString(R.string.btn_ok), null)
+                    .create()
+                    .show();
+        }
+        return true;
     }
 }
