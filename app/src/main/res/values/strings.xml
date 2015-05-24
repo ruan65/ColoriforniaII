@@ -3,13 +3,12 @@
 
     <string name="app_name">Colorifornia</string>
     <string name="action_settings" translatable="false">Settings</string>
-    <string name="drawer_open">Drawer opened</string>
-    <string name="drawer_close">Drawer closed</string>
+    <string name="drawer_open" translatable="false">Drawer opened</string>
+    <string name="drawer_close" translatable="false">Drawer closed</string>
     <!-- Preferences -->
     <string name="pref_key_user_learned_drawer" translatable="false">user_learned_drawer</string>
     <string name="not_first_time" translatable="false">notFirstTimeAppStarts</string>
     <string name="color" translatable="false">color</string>
-    <string name="btn_back">\u21a9</string>
     <string name="save_color">Save color (also via "V" or double click)</string>
     <string name="erase">Clear saved colors</string>
     <string name="ok" translatable="false">OK</string>
@@ -62,4 +61,11 @@
     <string name="chooser_title">Send color(s) parameters...</string>
     <string name="hint_op_image_title">Hint</string>
     <string name="hint_op_image_msg">This is a stub image. To open an actual image, press "Gallery folder" icon on the action bar.</string>
+    <string name="key_prefs_instruction" translatable="false">prefs_instruction</string>
+    <string name="prefs_help_title">Help</string>
+    <string name="prefs_help_summary">Tips and tricks</string>
+    <string name="prefs_title_about">About</string>
+    <string name="prefs_summary_about">Info about Colorifornia App</string>
+    <string name="prefs_contacts_summary">colorifornia@yahoo.com</string>
+    <string name="prefs_contacts_title">Contacts</string>
 </resources>
