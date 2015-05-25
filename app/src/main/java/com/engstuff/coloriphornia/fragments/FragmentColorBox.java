@@ -44,7 +44,6 @@ public class FragmentColorBox extends Fragment {
 
     private Activity activity;
 
-    private GestureDetector gestureDetector;
     private GestureLibrary gestureLibrary;
 
     private Animation likeAnim;
@@ -65,15 +64,30 @@ public class FragmentColorBox extends Fragment {
     public FragmentColorBox() {
     }
 
-    View.OnTouchListener touchListener = new View.OnTouchListener() {
+    private GestureDetector mGestureDetector =
+
+            new GestureDetector(activity, new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onDoubleTap(MotionEvent e) {
+
+                    performColorSave();
+                    return true;
+                }
+            });
+
+    private View.OnTouchListener touchListener = new View.OnTouchListener() {
 
         @Override
         public boolean onTouch(View v, MotionEvent event) {
+
             switch (event.getAction()) {
+
                 case MotionEvent.ACTION_DOWN:
                     v.animate().setInterpolator(new DecelerateInterpolator())
                             .scaleX(.7f).scaleY(.7f);
                     break;
+
                 case MotionEvent.ACTION_UP:
                     v.animate().setInterpolator(new OvershootInterpolator(10f))
                             .scaleX(1f).scaleY(1f);
@@ -131,16 +145,6 @@ public class FragmentColorBox extends Fragment {
             }
         });
 
-        gestureDetector = new GestureDetector(activity, new GestureDetector.SimpleOnGestureListener() {
-
-            @Override
-            public boolean onDoubleTap(MotionEvent e) {
-
-                performColorSave();
-                return true;
-            }
-        });
-
         like.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,12 +152,11 @@ public class FragmentColorBox extends Fragment {
                 activity.startActivity(new Intent(activity, FavoriteColorsActivity.class));
             }
         });
+
         layout.removeView(like);
 
         return gestureLayer;
     }
-
-
 
     @Override
     public void onAttach(Activity activity) {
@@ -285,7 +288,7 @@ public class FragmentColorBox extends Fragment {
 
     @OnTouch(R.id.color_box_layout)
     public boolean colorTouched(MotionEvent event) {
-        return gestureDetector.onTouchEvent(event);
+        return mGestureDetector.onTouchEvent(event);
     }
 
     @OnClick(R.id.btn_color_info)

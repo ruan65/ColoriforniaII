@@ -1,7 +1,4 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Main">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
         android:id="@+id/ctx_menu_save_color_full"
@@ -10,6 +7,4 @@
     <item
         android:id="@+id/ctx_menu_set_wallpaper"
         android:title="@string/ctx_set_wallpaper" />
-
-
 </menu>

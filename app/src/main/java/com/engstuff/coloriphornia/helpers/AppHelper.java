@@ -66,8 +66,8 @@ public class AppHelper {
             ImageView like = colorBox.getLike();
 
             like.setImageResource(colorBox.isWhiteText()
-                            ? R.drawable.ic_loyalty_white_24dp
-                            : R.drawable.ic_loyalty_black_24dp);
+                    ? R.drawable.ic_loyalty_white_24dp
+                    : R.drawable.ic_loyalty_black_24dp);
 
             if (like.getParent() == null) colorBox.getLayout().addView(like);
         }
@@ -145,7 +145,9 @@ public class AppHelper {
         }
     }
 
-    public static String getDeviceGoogleEmail(Context context) {        Account account = getAccount(AccountManager.get(context));
+    public static String getDeviceGoogleEmail(Context context) {
+
+        Account account = getAccount(AccountManager.get(context));
 
         if (account == null) {
             return "";
@@ -163,7 +165,8 @@ public class AppHelper {
             account = accounts[0];
         } else {
             account = null;
-        } return account;
+        }
+        return account;
     }
 
     public static void fireShareIntent(Activity activity, String html) {
@@ -182,12 +185,12 @@ public class AppHelper {
         activity.startActivity(Intent.createChooser(emailIntent, activity.getString(R.string.chooser_title)));
     }
 
-    public static Uri resourceToUri (Context context,int resID) {
+    public static Uri resourceToUri(Context context, int resID) {
 
         return Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" +
                 context.getResources().getResourcePackageName(resID) + '/' +
                 context.getResources().getResourceTypeName(resID) + '/' +
-                context.getResources().getResourceEntryName(resID) );
+                context.getResources().getResourceEntryName(resID));
     }
 
     public static void showWallpaperDialog(final Activity act, final int color) {
