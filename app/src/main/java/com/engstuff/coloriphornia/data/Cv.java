@@ -34,6 +34,7 @@ public interface Cv {
 
     String IMAGE_FRAGMENT_RETAINED = "retained_img_fragment";
     String LAST_COLOR = "last_color";
+    String DEV_EMAIL = "colorifornia@yahoo.com";
 
     int RED = 0xf00;
     int GREEN = 0x0f0;

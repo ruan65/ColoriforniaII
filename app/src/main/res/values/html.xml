@@ -5,6 +5,10 @@
 
     ]]></string>
 
+    <string name="email_body_dev"><![CDATA[
+        "<p>Hello,<p/><p>This is a message from \"Colorifornia\" app user."
+    ]]></string>
+
     <string name="html_email_body_header"><![CDATA[
         "<p><b>Colors chosen via \"Colorifornia\" mobile app: </b></p>"
     ]]></string>

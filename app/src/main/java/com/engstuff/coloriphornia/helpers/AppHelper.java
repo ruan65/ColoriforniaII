@@ -17,7 +17,6 @@ import android.widget.ImageView;
 
 import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.activities.ColorC;
-import com.engstuff.coloriphornia.activities.ColorFromImage;
 import com.engstuff.coloriphornia.activities.FullScreenColorC;
 import com.engstuff.coloriphornia.activities.MockUpActivity;
 import com.engstuff.coloriphornia.data.Cv;
@@ -169,20 +168,25 @@ public class AppHelper {
         return account;
     }
 
-    public static void fireShareIntent(Activity activity, String html) {
+    public static void sendEmail(Activity activity, String html, String... emails) {
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
         emailIntent.setType("message/rfc822");
 
         emailIntent.putExtra(Intent.EXTRA_EMAIL,
-                readFromPrefsAllToArray(activity, Cv.SAVED_EMAILS));
+                emails);
 
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.email_subject));
 
         emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(html));
 
         activity.startActivity(Intent.createChooser(emailIntent, activity.getString(R.string.chooser_title)));
+    }
+
+    public static void sendEmail(Activity activity, String html) {
+
+        sendEmail(activity, html, readFromPrefsAllToArray(activity, Cv.SAVED_EMAILS));
     }
 
     public static Uri resourceToUri(Context context, int resID) {

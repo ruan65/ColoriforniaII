@@ -111,17 +111,17 @@ public abstract class MockUpActivity extends ActionBarActivity {
 
                 try {
                     if (this.getClass().equals(FontAndBackgroundActivity.class)) {
-                        AppHelper.fireShareIntent(this, getString(R.string.html_email_body_header) +
+                        AppHelper.sendEmail(this, getString(R.string.html_email_body_header) +
                                 ColorParams.composeInfoHTML(this,
                                         ((FontAndBackgroundActivity) this).getHexBackground(),
                                         ((FontAndBackgroundActivity) this).getHexFont()));
                     } else if (this.getClass().equals(FontAndBackgroundSolidActivity.class)) {
-                        AppHelper.fireShareIntent(this, getString(R.string.html_email_body_header) +
+                        AppHelper.sendEmail(this, getString(R.string.html_email_body_header) +
                                 ColorParams.composeInfoHTML(this,
                                         ((FontAndBackgroundSolidActivity) this).getHexBackground(),
                                         ((FontAndBackgroundSolidActivity) this).getHexFont()));
                     } else {
-                        AppHelper.fireShareIntent(this, composeEmailBody(false));
+                        AppHelper.sendEmail(this, composeEmailBody(false));
                     }
                 } catch (Exception e) {
                     Toast.makeText(this, getString(R.string.email_creating_error),

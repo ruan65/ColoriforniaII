@@ -61,7 +61,7 @@
     <string name="chooser_title">Send color(s) parameters...</string>
     <string name="hint_op_image_title">Hint</string>
     <string name="hint_op_image_msg">This is a stub image. To open an actual image, press "Gallery folder" icon on the action bar.</string>
-    <string name="key_prefs_help" translatable="false">prefs_instruction</string>
+    <string name="key_prefs_help" translatable="false">prefs_help</string>
     <string name="prefs_help_title">Help</string>
     <string name="prefs_help_summary">Tips and tricks</string>
     <string name="prefs_title_about">About</string>
