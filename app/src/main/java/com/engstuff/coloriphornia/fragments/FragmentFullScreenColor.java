@@ -207,10 +207,10 @@ public class FragmentFullScreenColor extends Fragment {
         String header = getString(R.string.html_email_body_header);
 
         if (null != hexFontColorString) {
-            AppHelper.sendEmail(activity, header +
+            AppHelper.sendColorEmail(activity, header +
                     ColorParams.composeInfoHTML(activity, hexBackColorString, hexFontColorString));
         } else {
-            AppHelper.sendEmail(activity, header +
+            AppHelper.sendColorEmail(activity, header +
                     ColorParams.composeInfoHTML(activity, hexBackColorString));
         }
     }

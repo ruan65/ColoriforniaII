@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="email_body_dev"><![CDATA[
+        "<p>Здравствуйте,<p/><p>Это сообщение от пользователя приложения \"Colorifornia\"."
+    ]]></string>
+
     <string name="html_email_body_header"><![CDATA[
         "<p><b>Приложение \"Colorifornia\", подобранные цвета: </b></p>"
     ]]></string>

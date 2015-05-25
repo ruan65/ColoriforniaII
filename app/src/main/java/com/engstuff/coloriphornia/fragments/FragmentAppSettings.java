@@ -63,8 +63,7 @@ public class FragmentAppSettings extends PreferenceFragment implements Preferenc
 
         } else if (preference.getKey().equals(getString(R.string.key_prefs_contacts))) {
 
-            AppHelper.sendEmail(getActivity(),
-                    getString(R.string.email_body_dev), Cv.DEV_EMAIL);
+            AppHelper.sendEmailToDeveloper(getActivity());
 
         } else if (preference.getKey().equals(getString(R.string.key_prefs_about))) {
 

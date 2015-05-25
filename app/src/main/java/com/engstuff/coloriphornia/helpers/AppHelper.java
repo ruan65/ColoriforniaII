@@ -168,7 +168,7 @@ public class AppHelper {
         return account;
     }
 
-    public static void sendEmail(Activity activity, String html, String... emails) {
+    public static void sendEmail(Context ctx, String html, String subject, String... emails) {
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
@@ -177,16 +177,22 @@ public class AppHelper {
         emailIntent.putExtra(Intent.EXTRA_EMAIL,
                 emails);
 
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.email_subject));
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
 
         emailIntent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(html));
 
-        activity.startActivity(Intent.createChooser(emailIntent, activity.getString(R.string.chooser_title)));
+        ctx.startActivity(Intent.createChooser(emailIntent, ctx.getString(R.string.chooser_title)));
     }
 
-    public static void sendEmail(Activity activity, String html) {
+    public static void sendColorEmail(Context ctx, String html) {
 
-        sendEmail(activity, html, readFromPrefsAllToArray(activity, Cv.SAVED_EMAILS));
+        sendEmail(ctx, html, ctx.getString(R.string.email_subject),
+                readFromPrefsAllToArray(ctx, Cv.SAVED_EMAILS));
+    }
+
+    public static void sendEmailToDeveloper(Context ctx) {
+        sendEmail(ctx, ctx.getString(R.string.email_body_dev),
+                ctx.getString(R.string.email_to_dev_subj), Cv.DEV_EMAIL);
     }
 
     public static Uri resourceToUri(Context context, int resID) {

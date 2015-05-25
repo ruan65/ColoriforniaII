@@ -45,12 +45,14 @@
     <string name="prefs_help_title" translatable="false">Помощь</string>
     <string name="prefs_help_summary">Подсказки и советы</string>
     <string name="prefs_contacts_title">Контакты</string>
-    <string name="prefs_contacts_summary">colorifornia@yahoo.com</string>
+    <string name="prefs_contacts_summary">colorifornia@yahoo.com\nОтправить письмо разработчику</string>
     <string name="prefs_title_about">О программе</string>
     <string name="prefs_summary_about">Подробная информация о приложении </string>
     <string name="btn_ok">ОК</string>
     <string name="dialog_about_title">О программе "Colorifornia"</string>
     <string name="dialog_about_message_ver">Версия:</string>
+    <string name="color_saved">Цвет  сохранен</string>
+    <string name="email_to_dev_subj">От пользователя приложения "Colorifornia"</string>
 
     <string name="info_about">
 
@@ -82,6 +84,4 @@ colorifornia@yahoo.com\n
 Andrew (разработчик)
 
     </string>
-    <string name="color_saved">Цвет  сохранен</string>
-
 </resources>

@@ -26,7 +26,7 @@
     <string name="sb_emails">Email(s):\n</string>
     <string name="sb_no_emails">\nNo emails to delete...</string>
     <string name="sb_wb_deleted">\n\nwill be deleted</string>
-    <string name="dial_title_del_emails" translatable="false">Deleting emails</string>
+    <string name="dial_title_del_emails">Deleting emails</string>
     <string name="new_line" translatable="false">\n</string>
     <string name="toast_email">"email: "</string>
     <string name="toast_hb_saved">" has been saved"</string>
@@ -66,13 +66,14 @@
     <string name="prefs_help_summary">Tips and tricks</string>
     <string name="prefs_title_about">About</string>
     <string name="prefs_summary_about">Info about Colorifornia App</string>
-    <string name="prefs_contacts_summary">colorifornia@yahoo.com</string>
+    <string name="prefs_contacts_summary">colorifornia@yahoo.com\n(Send email to developer)</string>
     <string name="prefs_contacts_title">Contacts</string>
     <string name="key_prefs_about" translatable="false">key_prefs_about</string>
     <string name="key_prefs_contacts" translatable="false">key_prefs_contacts</string>
     <string name="dialog_about_title">About "Colorifornia" App</string>
     <string name="dialog_about_message_ver">Version: </string>
     <string name="color_saved">Color saved</string>
+    <string name="email_to_dev_subj">From \"Colorifornia\" app user</string>
     <string name="info_about">
 
         \"Colorifornia\" is a convenient tool for working and playing with colors:\n\n
@@ -99,4 +100,5 @@ colorifornia@yahoo.com\n
 Andrew (developer)
 
     </string>
+
 </resources>
