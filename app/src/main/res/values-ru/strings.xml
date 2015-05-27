@@ -53,6 +53,9 @@
     <string name="dialog_about_message_ver">Версия:</string>
     <string name="color_saved">Цвет  сохранен</string>
     <string name="email_to_dev_subj">От пользователя приложения "Colorifornia"</string>
+    <string name="del_color_title">Удалить отмеченные?</string>
+    <string name="del_colors_msg">Все выбранные цвета будут удалены. Продолжить?</string>
+    <string name="del_colors_msg_nothing">Не выбраны цвета. Нечего удалять.</string>
 
     <string name="info_about">
 

@@ -1,6 +1,7 @@
 package com.engstuff.coloriphornia.fragments;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import com.engstuff.coloriphornia.BuildConfig;
 import com.engstuff.coloriphornia.R;
+import com.engstuff.coloriphornia.activities.HelpActivity;
 import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.helpers.AppHelper;
 import com.engstuff.coloriphornia.helpers.PrefsHelper;
@@ -60,6 +62,7 @@ public class FragmentAppSettings extends PreferenceFragment implements Preferenc
 
         } else if (preference.getKey().equals(getString(R.string.key_prefs_help))) {
 
+            startActivity(new Intent(getActivity(), HelpActivity.class));
 
         } else if (preference.getKey().equals(getString(R.string.key_prefs_contacts))) {
 

@@ -206,11 +206,11 @@ public class FavoriteColorsActivity extends MockUpActivity {
             case R.id.bin:
 
                 new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_LIGHT)
-                        .setTitle("Discard checked")
+                        .setTitle(getString(R.string.del_color_title))
                         .setMessage(
                                 fColorsList.size() > 0 && !areAllUnchecked()
-                                        ? "All checked colors will be erased. Proceed?"
-                                        : "An empty list. Nothing to delete."
+                                        ? getString(R.string.del_colors_msg)
+                                        : getString(R.string.del_colors_msg_nothing)
                         )
                         .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                             @Override
