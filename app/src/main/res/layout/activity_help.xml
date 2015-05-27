@@ -15,7 +15,7 @@
 
 
         <FrameLayout
-            android:id="@+id/help_list_fragment_container"
+            android:id="@+id/universal_fragment_container"
             android:layout_width="match_parent"
             android:background="#900"
             android:layout_height="match_parent" />

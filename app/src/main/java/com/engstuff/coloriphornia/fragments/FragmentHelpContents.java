@@ -29,7 +29,7 @@ public class FragmentHelpContents extends Fragment implements AdapterView.OnItem
         mContentsAdapter = new ArrayAdapter<>(getActivity(),
                 R.layout.list_item_help_contents,
                 R.id.list_item_contents_textview,
-                getResources().getStringArray(R.array.help_contents));
+                getResources().getStringArray(R.array.help_contents));  // data sits in the XML
 
         View rootView = inflater.inflate(R.layout.fragment_help_contents, container, false);
 

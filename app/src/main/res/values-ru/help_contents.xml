@@ -5,4 +5,10 @@
         <item>Два</item>
         <item>Три</item>
     </string-array>
+
+    <string-array name="help_title">
+        <item>Инструкция 1</item>
+        <item>Инструкция 2</item>
+        <item>Инструкция 3</item>
+    </string-array>
 </resources>

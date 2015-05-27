@@ -130,7 +130,8 @@ public abstract class MockUpActivity extends ActionBarActivity {
                     Log.e(getApplication().getPackageName(),
                             getString(R.string.err_creating_email) + e.getMessage());
                     e.printStackTrace();
-                } break;
+                }
+                break;
 
             case R.id.back:
 
@@ -163,6 +164,22 @@ public abstract class MockUpActivity extends ActionBarActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    /**
+     * This is for correct adding Fragments to addToBackStack(null)
+     * And now more - open/close drawer after pressing it
+     */
+    @Override
+    public void onBackPressed() {
+
+        if (mDrawerLayout.isDrawerOpen(mDrawerView)) {
+            mDrawerLayout.closeDrawer(mDrawerView);
+        } else if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     private void openCloseDrawer() {
