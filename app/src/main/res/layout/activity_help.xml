@@ -20,8 +20,6 @@
             android:background="#900"
             android:layout_height="match_parent" />
 
-
-
     </LinearLayout>
 
     <include layout="@layout/nav_drawer_fr" />

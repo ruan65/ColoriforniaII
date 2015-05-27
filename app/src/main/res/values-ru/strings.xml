@@ -42,7 +42,6 @@
     <string name="chooser_title">Отправка параметров цвета(ов)</string>
     <string name="hint_op_image_title">Подсказка</string>
     <string name="hint_op_image_msg">"Это картинка-заглушка. Для открытия актуального изображения нажмите иконку галереи.</string>
-    <string name="prefs_help_title" translatable="false">Помощь</string>
     <string name="prefs_help_summary">Подсказки и советы</string>
     <string name="prefs_contacts_title">Контакты</string>
     <string name="prefs_contacts_summary">colorifornia@yahoo.com\nОтправить письмо разработчику</string>
@@ -87,4 +86,6 @@ colorifornia@yahoo.com\n
 Andrew (разработчик)
 
     </string>
+    <string name="prefs_help_title" translatable="false">Справка</string>
+    <string name="title_activity_help">Справка</string>
 </resources>
