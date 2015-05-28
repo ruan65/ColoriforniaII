@@ -43,14 +43,15 @@ public class FragmentInstruction extends Fragment {
     }
 
     public void setImage(int id) {
+
         Context c = getActivity();
+
         try {
             imageView.setImageResource(c.getResources().
                     getIdentifier("drawable/instr_" + id, null, c.getPackageName()));
         } catch (Exception e) {
             Log.e(getClass().getName(), "Error: ", e);
         }
-
     }
 
 }

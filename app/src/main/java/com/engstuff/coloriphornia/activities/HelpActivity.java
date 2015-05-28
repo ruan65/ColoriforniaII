@@ -3,8 +3,6 @@ package com.engstuff.coloriphornia.activities;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.FrameLayout;
 
 import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.fragments.FragmentHelpContents;
@@ -13,19 +11,27 @@ import com.engstuff.coloriphornia.fragments.FragmentInstruction;
 public class HelpActivity extends MockUpActivity implements FragmentHelpContents.ListSelectionListener {
 
     private FragmentInstruction fragmentInstruction;
+    private FragmentHelpContents fragmentHelpContents;
+    FragmentManager fm;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
+        fragmentInstruction = new FragmentInstruction();
+        fragmentHelpContents = new FragmentHelpContents();
+        fm = getFragmentManager();
 
         super.onCreate(savedInstanceState);
 
         if (isInTwoPaneMode()) {
 
-            fragmentInstruction = new FragmentInstruction();
+            fm.beginTransaction()
+                    .replace(R.id.help_list_fragment_container, fragmentHelpContents)
+                    .replace(R.id.help_instruction_fragment_container, fragmentInstruction)
+                    .commit();
         } else {
 
-            getFragmentManager().beginTransaction()
+            fm.beginTransaction()
                     .replace(R.id.universal_fragment_container, new FragmentHelpContents())
                     .commit();
         }
@@ -51,12 +57,11 @@ public class HelpActivity extends MockUpActivity implements FragmentHelpContents
 
         if (!isInTwoPaneMode()) {
 
-            FragmentManager fm = getFragmentManager();
-
             fm.beginTransaction()
-            .replace(R.id.universal_fragment_container, fragmentInstruction)
-            .addToBackStack(null)
-            .commit();
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                    .replace(R.id.universal_fragment_container, fragmentInstruction)
+                    .addToBackStack(null)
+                    .commit();
 
             fm.executePendingTransactions();
         }
