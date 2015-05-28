@@ -20,6 +20,7 @@ public class FragmentHelpContents extends Fragment implements AdapterView.OnItem
 
     private ArrayAdapter<String> mContentsAdapter;
     private ListSelectionListener mCallBack;
+    private ListView listView;
 
     public FragmentHelpContents() {}
 
@@ -27,15 +28,14 @@ public class FragmentHelpContents extends Fragment implements AdapterView.OnItem
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state) {
 
         mContentsAdapter = new ArrayAdapter<>(getActivity(),
-                R.layout.list_item_help_contents,
-                R.id.list_item_contents_textview,
+                android.R.layout.simple_list_item_activated_2,
+                android.R.id.text1,
                 getResources().getStringArray(R.array.help_contents));  // data sits in the XML
 
         View rootView = inflater.inflate(R.layout.fragment_help_contents, container, false);
 
-        ListView listView = (ListView) rootView.findViewById(R.id.listview_help_contents);
+        listView = (ListView) rootView.findViewById(R.id.listview_help_contents);
         listView.setAdapter(mContentsAdapter);
-
         listView.setOnItemClickListener(this);
 
         return rootView;
@@ -51,5 +51,9 @@ public class FragmentHelpContents extends Fragment implements AdapterView.OnItem
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         mCallBack.onItemSelected(position);
+    }
+
+    public ListView getListView() {
+        return listView;
     }
 }

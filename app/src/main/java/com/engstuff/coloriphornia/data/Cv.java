@@ -36,6 +36,8 @@ public interface Cv {
     String LAST_COLOR = "last_color";
     String DEV_EMAIL = "colorifornia@yahoo.com";
 
+    String SELECTED_ITEM = "selectedItem";
+
     int RED = 0xf00;
     int GREEN = 0x0f0;
     int BLUE = 0x00f;
