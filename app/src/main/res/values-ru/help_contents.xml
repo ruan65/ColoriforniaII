@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="help_contents">
-        <item>Один</item>
-        <item>Два</item>
-        <item>Три</item>
+        <item>Кнопки</item>
+        <item>Иконки</item>
+        <item>Контекстные менюшки</item>
+        <item>Регуляторы цвета</item>
+        <item>Выбор цвета из картинки</item>
+        <item>Отправка парамтров цвета(ов)</item>
+        <item>Подбор цветов шрифта и фона</item>
+        <item>Навигация по приложению</item>
     </string-array>
 
-    <string-array name="help_title">
-        <item>Инструкция 1</item>
-        <item>Инструкция 2</item>
-        <item>Инструкция 3</item>
+    <string-array name="help_description">
+        <item>Кнопки</item>
+        <item>Иконки</item>
+        <item>Контекстные менюшки</item>
+        <item>Регуляторы цвета</item>
+        <item>Выбор цвета из картинки</item>
+        <item>Отправка парамтров цвета(ов)</item>
+        <item>Подбор цветов шрифта и фона</item>
+        <item>Навигация по приложению</item>
     </string-array>
 </resources>

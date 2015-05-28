@@ -4,6 +4,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.FrameLayout;
 
 import com.engstuff.coloriphornia.R;
 import com.engstuff.coloriphornia.fragments.FragmentHelpContents;
@@ -15,6 +16,8 @@ public class HelpActivity extends MockUpActivity implements FragmentHelpContents
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
 
         if (isInTwoPaneMode()) {
@@ -23,7 +26,7 @@ public class HelpActivity extends MockUpActivity implements FragmentHelpContents
         } else {
 
             getFragmentManager().beginTransaction()
-                    .add(R.id.universal_fragment_container, new FragmentHelpContents())
+                    .replace(R.id.universal_fragment_container, new FragmentHelpContents())
                     .commit();
         }
     }
@@ -40,7 +43,6 @@ public class HelpActivity extends MockUpActivity implements FragmentHelpContents
 
     @Override
     public void onItemSelected(int position) {
-        Log.d("ml", "List position = " + position);
 
         if (fragmentInstruction == null) {
 
@@ -59,7 +61,10 @@ public class HelpActivity extends MockUpActivity implements FragmentHelpContents
             fm.executePendingTransactions();
         }
 
+        fragmentInstruction.setText(
+                getResources().getStringArray(R.array.help_description)[position]);
 
+        fragmentInstruction.setImage(position);
     }
 
     private boolean isInTwoPaneMode() {

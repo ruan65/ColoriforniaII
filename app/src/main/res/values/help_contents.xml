@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="help_contents">
-        <item>One</item>
-        <item>Two</item>
-        <item>Three</item>
+        <item>Buttons</item>
+        <item>Icons</item>
+        <item>Context menus</item>
+        <item>Color controls</item>
+        <item>Pick colors from image</item>
+        <item>Send color(s) parameters</item>
+        <item>Navigation within the app</item>
     </string-array>
+
+    <string-array name="help_description">
+        <item>Have a look at the picture below</item>
+        <item>Icons</item>
+        <item>Context menus</item>
+        <item>Color controls</item>
+        <item>Pick colors from image</item>
+        <item>Send color(s) parameters</item>
+        <item>Navigation within the app</item>
+    </string-array>
+
+
 </resources>
