@@ -24,7 +24,6 @@ public class HelpActivity extends MockUpActivity implements FragmentHelpContents
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-
         fragmentHelpContents = new FragmentHelpContents();
         fragmentInstruction = new FragmentInstruction();
 
