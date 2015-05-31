@@ -89,7 +89,7 @@ public class FragmentInstruction extends Fragment {
                 R.drawable.ic_send_white_36dp,
                 R.drawable.ic_blur_on_white_36dp,
                 R.drawable.ic_blur_off_white_36dp,
-                R.drawable.ic_info_white
+                R.drawable.ic_info_outline_white_36dp
         };
 
 //                ctx.getResources().getIntArray(R.array.help_buttons_images);

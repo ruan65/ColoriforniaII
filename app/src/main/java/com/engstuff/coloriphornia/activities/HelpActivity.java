@@ -67,7 +67,7 @@ public class HelpActivity extends MockUpActivity
 
         if (isInTwoPaneMode()) {
 
-            final ListView lv = fragmentHelpContents.getListView();
+            final ListView lv = fragmentHelpContents.getmListContents();
 
             new Handler().post(new Runnable() {
 

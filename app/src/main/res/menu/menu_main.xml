@@ -84,7 +84,7 @@
 
     <item
         android:id="@+id/info_menu"
-        android:icon="@drawable/ic_info_white"
+        android:icon="@drawable/ic_info_outline_white_36dp"
         android:orderInCategory="35"
         android:title="@string/open_image"
         android:visible="false"

@@ -196,8 +196,8 @@ public class FragmentColorBox extends Fragment {
             layout.removeView(like);
         }
         like.setImageResource(ColorParams.blackOrWhiteText(alpha, r, g, b)
-                ? R.drawable.ic_loyalty_white_24dp
-                : R.drawable.ic_loyalty_black_24dp);
+                ? R.drawable.ic_loyalty_white_36dp
+                : R.drawable.ic_loyalty_black_36dp);
         layout.addView(like);
         likeAnim.cancel();
         like.startAnimation(likeAnim);

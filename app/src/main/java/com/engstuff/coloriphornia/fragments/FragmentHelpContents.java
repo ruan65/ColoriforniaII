@@ -19,8 +19,8 @@ public class FragmentHelpContents extends Fragment implements AdapterView.OnItem
     }
 
     private ArrayAdapter<String> mContentsAdapter;
-    private ListSelectionListener mCallBack;
-    private ListView listView;
+    private ListSelectionListener mOnClickCallBack;
+    private ListView mListContents;
 
     public FragmentHelpContents() {}
 
@@ -34,9 +34,9 @@ public class FragmentHelpContents extends Fragment implements AdapterView.OnItem
 
         View rootView = inflater.inflate(R.layout.fragment_help_contents, container, false);
 
-        listView = (ListView) rootView.findViewById(R.id.listview_help_contents);
-        listView.setAdapter(mContentsAdapter);
-        listView.setOnItemClickListener(this);
+        mListContents = (ListView) rootView.findViewById(R.id.listview_help_contents);
+        mListContents.setAdapter(mContentsAdapter);
+        mListContents.setOnItemClickListener(this);
 
         return rootView;
     }
@@ -45,15 +45,15 @@ public class FragmentHelpContents extends Fragment implements AdapterView.OnItem
     public void onAttach(Activity activity) {
         super.onAttach(activity);
 
-        mCallBack = (ListSelectionListener) activity;
+        mOnClickCallBack = (ListSelectionListener) activity;
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        mCallBack.onItemSelected(position);
+        mOnClickCallBack.onItemSelected(position);
     }
 
-    public ListView getListView() {
-        return listView;
+    public ListView getmListContents() {
+        return mListContents;
     }
 }

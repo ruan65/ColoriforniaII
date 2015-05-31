@@ -65,8 +65,8 @@ public class AppHelper {
             ImageView like = colorBox.getLike();
 
             like.setImageResource(colorBox.isWhiteText()
-                    ? R.drawable.ic_loyalty_white_24dp
-                    : R.drawable.ic_loyalty_black_24dp);
+                    ? R.drawable.ic_loyalty_white_36dp
+                    : R.drawable.ic_loyalty_black_36dp);
 
             if (like.getParent() == null) colorBox.getLayout().addView(like);
         }
@@ -78,8 +78,8 @@ public class AppHelper {
         if (null != info) {
             info.setImageResource(
                     box.isWhiteText()
-                            ? R.drawable.ic_info_white
-                            : R.drawable.ic_info_black
+                            ? R.drawable.ic_info_outline_white_36dp
+                            : R.drawable.ic_info_outline_black_36dp
             );
         }
     }
