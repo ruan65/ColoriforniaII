@@ -102,7 +102,13 @@ public class HelpActivity extends MockUpActivity
         fragmentInstruction = new FragmentInstruction();
         fragmentInstruction.setPosition(position);
 
-        if (!isInTwoPaneMode()) {
+        if (isInTwoPaneMode()) {
+
+            fm.beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                    .replace(R.id.help_instruction_fragment_container, fragmentInstruction)
+                    .commit();
+        } else {
 
             fm.beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
@@ -110,15 +116,8 @@ public class HelpActivity extends MockUpActivity
                     .addToBackStack(null)
                     .commit();
 
-            fm.executePendingTransactions();
-        } else {
-
-            fm.beginTransaction()
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-                    .replace(R.id.help_instruction_fragment_container, fragmentInstruction)
-                    .addToBackStack(null)
-                    .commit();
         }
+        fm.executePendingTransactions();
 
         if (position > 0) {
 
@@ -127,7 +126,7 @@ public class HelpActivity extends MockUpActivity
 
             fragmentInstruction.setImage(position);
         }
-        fm.executePendingTransactions();
+
     }
 
     private boolean isInTwoPaneMode() {

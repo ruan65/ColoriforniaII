@@ -21,7 +21,7 @@
     </string-array>
 
     <array name="help_buttons">
-        <item>Open navigation drawer\n Navigating through the app screens</item>
+        <item>Open navigation drawer and navigate through the app screens</item>
         <item>Go to previously opened screen</item>
         <item>Send color(s) parameters via email or messenger</item>
         <item>Show the color\' opacity regulator</item>
