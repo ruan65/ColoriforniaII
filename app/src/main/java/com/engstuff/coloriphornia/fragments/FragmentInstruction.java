@@ -1,24 +1,31 @@
 package com.engstuff.coloriphornia.fragments;
 
 
-import android.content.Context;
-import android.os.Bundle;
+import android.app.Activity;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.engstuff.coloriphornia.R;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FragmentInstruction extends Fragment {
 
     TextView textView;
     ImageView imageView;
     int position;
+    Activity ctx;
 
     public FragmentInstruction() {
     }
@@ -35,13 +42,23 @@ public class FragmentInstruction extends Fragment {
             textView = (TextView) root.findViewById(R.id.instruction_text);
             imageView = (ImageView) root.findViewById(R.id.instruction_img);
         } else {
-            root = new ListView(getActivity());
-            TextView header = new TextView(getActivity());
+
+            root = new FrameLayout(ctx);
+            ListView lv = new ListView(ctx);
+            TextView header = new TextView(ctx);
             header.setText("Buttons");
-            ((ListView) root).addHeaderView(header);
+            lv.addHeaderView(header);
+            lv.setAdapter(createAdapter());
+            ((FrameLayout) root).addView(lv);
 
         }
         return root;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ctx = activity;
     }
 
     public void setText(String text) {
@@ -55,11 +72,9 @@ public class FragmentInstruction extends Fragment {
 
     public void setImage(int id) {
 
-        Context c = getActivity();
-
         try {
-            imageView.setImageResource(c.getResources().
-                    getIdentifier("drawable/instr_" + id, null, c.getPackageName()));
+            imageView.setImageResource(ctx.getResources().
+                    getIdentifier("drawable/instr_" + id, null, ctx.getPackageName()));
         } catch (Exception e) {
             Log.e(getClass().getName(), "Error: ", e);
         }
@@ -67,5 +82,29 @@ public class FragmentInstruction extends Fragment {
 
     public void setPosition(int position) {
         this.position = position;
+    }
+
+    private SimpleAdapter createAdapter() {
+
+        String[] texts = ctx.getResources().getStringArray(R.array.help_buttons);
+
+        int[] images = {R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher,
+                R.drawable.ic_launcher, R.drawable.ic_launcher};
+        ArrayList<Map<String, Object>> data = new ArrayList<>();
+        Map<String, Object> m;
+
+        for (int i = 0; i < texts.length; i++) {
+
+            m = new HashMap<>();
+            m.put("text", texts[i]);
+            m.put("img", images[i]);
+            data.add(m);
+        }
+
+        return new SimpleAdapter(ctx,
+                data,
+                R.layout.help_btn_list_item,
+                new String[]{"img", "text"},
+                new int[]{R.id.help_btn_img, R.id.help_btn_text});
     }
 }
