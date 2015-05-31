@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="help_contents">
-        <item>Buttons</item>
-        <item>Icons</item>
+        <item>Buttons and Icons</item>
         <item>Context menus</item>
         <item>Color controls</item>
         <item>Pick colors from image</item>
@@ -11,7 +11,7 @@
     </string-array>
 
     <string-array name="help_description">
-        <item>Have a look at the picture below</item>
+        <item>stub</item>
         <item>Icons</item>
         <item>Context menus</item>
         <item>Color controls</item>
@@ -25,8 +25,8 @@
         <item>Go to previously opened screen</item>
         <item>Send color(s) parameters via email or messenger</item>
         <item>Show the color\' opacity regulator</item>
-        <item>Open color(s) in the \"Fullscreen\" mode</item>
+        <item>Hide the color\' opacity regulator</item>
+        <item>Open color(s) in the \"Fullscreen\" mode and provide color\' parameters</item>
     </array>
-
 
 </resources>

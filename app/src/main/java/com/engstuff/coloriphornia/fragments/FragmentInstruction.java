@@ -8,13 +8,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.engstuff.coloriphornia.R;
+import com.engstuff.coloriphornia.data.Cv;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -83,23 +83,32 @@ public class FragmentInstruction extends Fragment {
 
         String[] texts = ctx.getResources().getStringArray(R.array.help_buttons);
 
-        int[] images = {R.drawable.ic_launcher, R.drawable.ic_launcher, R.drawable.ic_launcher,
-                R.drawable.ic_launcher, R.drawable.ic_launcher};
+        int[] images = {
+                R.drawable.ic_menu_white_36dp,
+                R.drawable.ic_repeat_white_36dp,
+                R.drawable.ic_send_white_36dp,
+                R.drawable.ic_blur_on_white_36dp,
+                R.drawable.ic_blur_off_white_36dp,
+                R.drawable.ic_info_white
+        };
+
+//                ctx.getResources().getIntArray(R.array.help_buttons_images);
+
         ArrayList<Map<String, Object>> data = new ArrayList<>();
         Map<String, Object> m;
 
         for (int i = 0; i < texts.length; i++) {
 
             m = new HashMap<>();
-            m.put("text", texts[i]);
-            m.put("img", images[i]);
+            m.put(Cv.IMG, images[i]);
+            m.put(Cv.TEXT, texts[i]);
             data.add(m);
         }
 
         return new SimpleAdapter(ctx,
                 data,
                 R.layout.help_btn_list_item,
-                new String[]{"img", "text"},
+                new String[]{Cv.IMG, Cv.TEXT},
                 new int[]{R.id.help_btn_img, R.id.help_btn_text});
     }
 }

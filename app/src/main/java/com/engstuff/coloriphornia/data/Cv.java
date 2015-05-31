@@ -37,6 +37,8 @@ public interface Cv {
     String DEV_EMAIL = "colorifornia@yahoo.com";
 
     String SELECTED_ITEM = "selectedItem";
+    String TEXT = "text";
+    String IMG = "img";
 
     int RED = 0xf00;
     int GREEN = 0x0f0;

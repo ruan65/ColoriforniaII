@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="help_contents">
-        <item>Кнопки</item>
-        <item>Иконки</item>
+        <item>Кнопки и иконки</item>
         <item>Контекстные менюшки</item>
         <item>Регуляторы цвета</item>
         <item>Выбор цвета из картинки</item>
@@ -12,8 +11,7 @@
     </string-array>
 
     <string-array name="help_description">
-        <item>Кнопки</item>
-        <item>Иконки</item>
+        <item>stub</item>
         <item>Контекстные менюшки</item>
         <item>Регуляторы цвета</item>
         <item>Выбор цвета из картинки</item>
