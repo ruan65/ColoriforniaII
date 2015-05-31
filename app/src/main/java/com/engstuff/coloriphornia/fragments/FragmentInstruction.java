@@ -89,10 +89,16 @@ public class FragmentInstruction extends Fragment {
                 R.drawable.ic_send_white_36dp,
                 R.drawable.ic_blur_on_white_36dp,
                 R.drawable.ic_blur_off_white_36dp,
-                R.drawable.ic_info_outline_white_36dp
+                R.drawable.ic_info_outline_white_36dp,
+                R.drawable.ic_photo_library_white_36dp,
+                R.drawable.ic_loyalty_white_36dp,
+                R.drawable.ic_target_w,
+                R.drawable.ic_sync_white_36dp,
+                R.drawable.ic_flip_to_back_white_36dp,
+                R.drawable.ic_flip_to_front_white_36dp,
+                R.drawable.ic_format_bold_white_36dp,
+                R.drawable.ic_format_italic_white_36dp
         };
-
-//                ctx.getResources().getIntArray(R.array.help_buttons_images);
 
         ArrayList<Map<String, Object>> data = new ArrayList<>();
         Map<String, Object> m;

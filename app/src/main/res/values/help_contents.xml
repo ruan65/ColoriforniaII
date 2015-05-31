@@ -21,12 +21,22 @@
     </string-array>
 
     <array name="help_buttons">
-        <item>Open navigation drawer and navigate through the app screens</item>
-        <item>Go to previously opened screen</item>
-        <item>Send color(s) parameters via email or messenger</item>
-        <item>Show the color\' opacity regulator</item>
-        <item>Hide the color\' opacity regulator</item>
-        <item>Open color(s) in the \"Fullscreen\" mode and provide color\' parameters</item>
+        <item>Open navigation drawer and navigate through the app screens.</item>
+        <item>Go to previously opened screen.</item>
+        <item>Send color(s) parameters via email or messenger.</item>
+        <item>Show the color\' opacity regulator.</item>
+        <item>Hide the color\' opacity regulator.</item>
+        <item>Open color(s) in the \"Fullscreen\" mode and provide color\' parameters.</item>
+        <item>Pick a photograph taken by the device camera or an image from a gallery.</item>
+        <item>Indicates that this color has been saved to favorites. Click on this icon to  open the \"Favorites\" screen.</item>
+        <item>Shows a point on the image that has been clicked. Color from this point is displayed.
+            Clicking on other points will move the \"Aim\". It\'s also possible to move the image under the \"Aim\".</item>
+        <item>Reset values of the color parameters (saturation, value and opacity) to 100%. (For the "round" color control only)</item>
+        <item>Move the font to front for color adjusting.</item>
+        <item>Move the background to front for color adjusting.</item>
+        <item>Bold / Normal font selector</item>
+        <item>Roman / Italic font selector</item>
+
     </array>
 
 </resources>
