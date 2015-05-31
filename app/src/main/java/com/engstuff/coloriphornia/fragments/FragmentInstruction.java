@@ -43,13 +43,8 @@ public class FragmentInstruction extends Fragment {
             imageView = (ImageView) root.findViewById(R.id.instruction_img);
         } else {
 
-            root = new FrameLayout(ctx);
-            ListView lv = new ListView(ctx);
-            TextView header = new TextView(ctx);
-            header.setText("Buttons");
-            lv.addHeaderView(header);
-            lv.setAdapter(createAdapter());
-            ((FrameLayout) root).addView(lv);
+            root = new ListView(ctx);
+            ((ListView) root).setAdapter(createAdapter());
 
         }
         return root;
