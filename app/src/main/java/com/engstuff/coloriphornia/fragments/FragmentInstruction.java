@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.engstuff.coloriphornia.R;
@@ -17,6 +18,7 @@ public class FragmentInstruction extends Fragment {
 
     TextView textView;
     ImageView imageView;
+    int position;
 
     public FragmentInstruction() {
     }
@@ -25,11 +27,20 @@ public class FragmentInstruction extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_instruction, container, false);
+        View root;
 
-        textView = (TextView) root.findViewById(R.id.instruction_text);
-        imageView = (ImageView) root.findViewById(R.id.instruction_img);
+        if (position > 0) {
+            root = inflater.inflate(R.layout.fragment_instruction, container, false);
 
+            textView = (TextView) root.findViewById(R.id.instruction_text);
+            imageView = (ImageView) root.findViewById(R.id.instruction_img);
+        } else {
+            root = new ListView(getActivity());
+            TextView header = new TextView(getActivity());
+            header.setText("Buttons");
+            ((ListView) root).addHeaderView(header);
+
+        }
         return root;
     }
 
@@ -54,4 +65,7 @@ public class FragmentInstruction extends Fragment {
         }
     }
 
+    public void setPosition(int position) {
+        this.position = position;
+    }
 }

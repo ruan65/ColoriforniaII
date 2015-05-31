@@ -4,7 +4,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.ListView;
 
 import com.engstuff.coloriphornia.R;
@@ -12,7 +11,8 @@ import com.engstuff.coloriphornia.data.Cv;
 import com.engstuff.coloriphornia.fragments.FragmentHelpContents;
 import com.engstuff.coloriphornia.fragments.FragmentInstruction;
 
-public class HelpActivity extends MockUpActivity implements FragmentHelpContents.ListSelectionListener {
+public class HelpActivity extends MockUpActivity
+        implements FragmentHelpContents.ListSelectionListener {
 
     private FragmentInstruction fragmentInstruction;
     private FragmentHelpContents fragmentHelpContents;
@@ -23,13 +23,29 @@ public class HelpActivity extends MockUpActivity implements FragmentHelpContents
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            selectedItem = savedInstanceState.getInt(Cv.SELECTED_ITEM, 0);
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+
+        outState.putInt(Cv.SELECTED_ITEM, selectedItem);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
 
         fragmentHelpContents = new FragmentHelpContents();
         fragmentInstruction = new FragmentInstruction();
+        fragmentInstruction.setPosition(selectedItem);
 
         fm = getFragmentManager();
-
-        super.onCreate(savedInstanceState);
 
         if (isInTwoPaneMode()) {
 
@@ -46,22 +62,8 @@ public class HelpActivity extends MockUpActivity implements FragmentHelpContents
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-
-        outState.putInt(Cv.SELECTED_ITEM, selectedItem);
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-
-        selectedItem = savedInstanceState.getInt(Cv.SELECTED_ITEM, 0);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onPostResume() {
+        super.onPostResume();
 
         if (isInTwoPaneMode()) {
 
@@ -94,10 +96,11 @@ public class HelpActivity extends MockUpActivity implements FragmentHelpContents
     @Override
     public void onItemSelected(int position) {
 
-        if (fragmentInstruction == null) {
+        selectedItem = position;
+        fragmentInstruction = null;
 
-            fragmentInstruction = new FragmentInstruction();
-        }
+        fragmentInstruction = new FragmentInstruction();
+        fragmentInstruction.setPosition(position);
 
         if (!isInTwoPaneMode()) {
 
@@ -108,14 +111,23 @@ public class HelpActivity extends MockUpActivity implements FragmentHelpContents
                     .commit();
 
             fm.executePendingTransactions();
+        } else {
+
+            fm.beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+                    .replace(R.id.help_instruction_fragment_container, fragmentInstruction)
+                    .addToBackStack(null)
+                    .commit();
         }
 
-        fragmentInstruction.setText(
-                getResources().getStringArray(R.array.help_description)[position]);
+        if (position > 0) {
 
-        fragmentInstruction.setImage(position);
+            fragmentInstruction.setText(
+                    getResources().getStringArray(R.array.help_description)[position]);
 
-        selectedItem = position;
+            fragmentInstruction.setImage(position);
+        }
+        fm.executePendingTransactions();
     }
 
     private boolean isInTwoPaneMode() {
