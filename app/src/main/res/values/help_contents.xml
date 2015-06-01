@@ -34,9 +34,14 @@
         <item>Reset values of the color parameters (saturation, value and opacity) to 100%. (For the "round" color control only)</item>
         <item>Move the font to front for color adjusting.</item>
         <item>Move the background to front for color adjusting.</item>
-        <item>Bold / Normal font selector</item>
-        <item>Roman / Italic font selector</item>
-
+        <item>Bold / Normal font selector.</item>
+        <item>Roman / Italic font selector.</item>
+        <item>In the \"Fullscreen\" mode reveals color(s) parameters info.</item>
+        <item>In the \"Fullscreen\" mode hides color(s) parameters info.</item>
+        <item>In the \"Favorites\" mode deletes \"checked\" colors.</item>
+        <item>In the \"Favorites\" mode shows that color is \"checked\" for sending or deleting.</item>
+        <item>In the \"Favorites\" mode is used for selecting all colors</item>
+        <item>In the \"Favorites\" mode is used for deselecting all selected colors</item>
     </array>
 
 </resources>

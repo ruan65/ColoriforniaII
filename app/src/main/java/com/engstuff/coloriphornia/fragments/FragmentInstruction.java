@@ -97,7 +97,13 @@ public class FragmentInstruction extends Fragment {
                 R.drawable.ic_flip_to_back_white_36dp,
                 R.drawable.ic_flip_to_front_white_36dp,
                 R.drawable.ic_format_bold_white_36dp,
-                R.drawable.ic_format_italic_white_36dp
+                R.drawable.ic_format_italic_white_36dp,
+                R.drawable.ic_add_circle_outline_white_36dp,
+                R.drawable.ic_remove_circle_outline_white_36dp,
+                R.drawable.ic_action_discard,
+                R.drawable.ic_done_white_48dp,
+                R.drawable.ic_select_all_white_36dp,
+                R.drawable.ic_undo_white_36dp
         };
 
         ArrayList<Map<String, Object>> data = new ArrayList<>();

@@ -16,7 +16,7 @@
         <at.markushi.ui.CircleButton
             android:id="@+id/btn_img"
             style="@style/nav_btn"
-            android:src="@drawable/ic_perm_media_white_36dp"
+            android:src="@drawable/ic_photo_library_white_36dp"
             app:cb_color="@color/primaryColor"
             app:cb_pressedRingWidth="8dip" />
 
