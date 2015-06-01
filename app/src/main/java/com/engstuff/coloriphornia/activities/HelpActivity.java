@@ -119,7 +119,7 @@ public class HelpActivity extends MockUpActivity
         }
         fm.executePendingTransactions();
 
-        if (position > 0) {
+        if (position > 1) {
 
             fragmentInstruction.setText(
                     getResources().getStringArray(R.array.help_description)[position]);
