@@ -119,7 +119,8 @@ public class FragmentInstruction extends Fragment {
                         R.drawable.ic_track_changes_white_36dp,
                         R.drawable.ic_format_quote_white_36dp,
                         R.drawable.ic_settings_white_36dp,
-                        R.drawable.ic_format_color_text_white_36dp
+                        R.drawable.ic_format_color_text_white_36dp,
+                        R.drawable.ic_help_white_36dp
                 };
 
         ArrayList<Map<String, Object>> data = new ArrayList<>();

@@ -21,6 +21,7 @@ import com.engstuff.coloriphornia.activities.ColorRoundControlC;
 import com.engstuff.coloriphornia.activities.FavoriteColorsActivity;
 import com.engstuff.coloriphornia.activities.FontAndBackgroundActivity;
 import com.engstuff.coloriphornia.activities.FontAndBackgroundSolidActivity;
+import com.engstuff.coloriphornia.activities.HelpActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -124,5 +125,10 @@ public class FragmentNavDrawer extends Fragment {
     @OnClick(R.id.btn_font_solid)
     public void goToFontSolid() {
         startActivity(new Intent(activity, FontAndBackgroundSolidActivity.class));
+    }
+
+    @OnClick(R.id.btn_nav_help)
+    public void goToHelp() {
+        startActivity(new Intent(activity, HelpActivity.class));
     }
 }
