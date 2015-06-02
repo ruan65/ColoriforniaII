@@ -14,16 +14,9 @@
         android:orientation="horizontal" >
 
         <at.markushi.ui.CircleButton
-            android:id="@+id/btn_img"
+            android:id="@+id/btn_two_colors"
             style="@style/nav_btn"
-            android:src="@drawable/ic_photo_library_white_36dp"
-            app:cb_color="@color/primaryColor"
-            app:cb_pressedRingWidth="8dip" />
-
-        <at.markushi.ui.CircleButton
-            android:id="@+id/btn_favorite"
-            style="@style/nav_btn"
-            android:src="@drawable/ic_favorite_white_36dp"
+            android:src="@drawable/ic_looks_two_white_36dp"
             app:cb_color="@color/primaryColor"
             app:cb_pressedRingWidth="8dip" />
 
@@ -35,16 +28,16 @@
             app:cb_pressedRingWidth="8dip" />
 
         <at.markushi.ui.CircleButton
-            android:id="@+id/btn_two_colors"
+            android:id="@+id/btn_round_control_c"
             style="@style/nav_btn"
-            android:src="@drawable/ic_looks_two_white_36dp"
+            android:src="@drawable/ic_track_changes_white_36dp"
             app:cb_color="@color/primaryColor"
             app:cb_pressedRingWidth="8dip" />
 
         <at.markushi.ui.CircleButton
-            android:id="@+id/btn_round_control_c"
+            android:id="@+id/btn_img"
             style="@style/nav_btn"
-            android:src="@drawable/ic_track_changes_white_36dp"
+            android:src="@drawable/ic_photo_library_white_36dp"
             app:cb_color="@color/primaryColor"
             app:cb_pressedRingWidth="8dip" />
 
@@ -66,6 +59,13 @@
             android:id="@+id/btn_settings"
             style="@style/nav_btn"
             android:src="@drawable/ic_settings_white_36dp"
+            app:cb_color="@color/primaryColor"
+            app:cb_pressedRingWidth="8dip" />
+
+        <at.markushi.ui.CircleButton
+            android:id="@+id/btn_favorite"
+            style="@style/nav_btn"
+            android:src="@drawable/ic_favorite_white_36dp"
             app:cb_color="@color/primaryColor"
             app:cb_pressedRingWidth="8dip" />
 

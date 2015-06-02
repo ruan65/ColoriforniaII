@@ -9,7 +9,7 @@
     <string name="pref_key_user_learned_drawer" translatable="false">user_learned_drawer</string>
     <string name="not_first_time" translatable="false">notFirstTimeAppStarts</string>
     <string name="color" translatable="false">color</string>
-    <string name="save_color">Save color (also via "V" or double click)</string>
+    <string name="save_color">Save color</string>
     <string name="erase">Clear saved colors</string>
     <string name="ok" translatable="false">OK</string>
     <string name="no">Cancel</string>

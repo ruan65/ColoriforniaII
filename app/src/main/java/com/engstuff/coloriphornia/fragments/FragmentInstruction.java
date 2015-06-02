@@ -112,14 +112,14 @@ public class FragmentInstruction extends Fragment {
                 }
                 : new int[]
                 {
-                        R.drawable.ic_photo_library_white_36dp,
-                        R.drawable.ic_favorite_white_36dp,
-                        R.drawable.ic_tune_white_36dp,
                         R.drawable.ic_looks_two_white_36dp,
+                        R.drawable.ic_tune_white_36dp,
                         R.drawable.ic_track_changes_white_36dp,
+                        R.drawable.ic_photo_library_white_36dp,
                         R.drawable.ic_format_quote_white_36dp,
-                        R.drawable.ic_settings_white_36dp,
                         R.drawable.ic_format_color_text_white_36dp,
+                        R.drawable.ic_settings_white_36dp,
+                        R.drawable.ic_favorite_white_36dp,
                         R.drawable.ic_help_white_36dp
                 };
 

@@ -12,9 +12,10 @@
     </string-array>
 
     <string-array name="help_description">
-        <item>stub</item>
-        <item>stub</item>
-        <item>Icons</item>
+        <item>_</item>
+        <item>_</item>
+        <item>Long press on the color to open context menu.
+            Actions you can perform with the color are shown in the picture below.</item>
         <item>Context menus</item>
         <item>Color controls</item>
         <item>Pick colors from image</item>
@@ -51,14 +52,14 @@
     </array>
 
     <array name="help_navigation">
-        <item>Open \"Color from an image\" screen</item>
-        <item>Open \"Favorite colors\" screen</item>
-        <item>Open \"Linear control\" screen</item>
         <item>Open \"Two colors\" screen</item>
+        <item>Open \"Linear control\" screen</item>
         <item>Open \"Round control\" screen</item>
+        <item>Open \"Color from an image\" screen</item>
         <item>Open \"Adjustable font\" screen</item>
         <item>Open \"Solid font\" screen</item>
         <item>Open \"Settings\" screen</item>
+        <item>Open \"Favorite colors\" screen</item>
         <item>Open \"Help\" screen</item>
     </array>
 
