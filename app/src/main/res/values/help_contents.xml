@@ -6,9 +6,10 @@
         <item>Navigation</item>
         <item>Context menus</item>
         <item>Color controls</item>
-        <item>Pick colors from image</item>
+        <item>Pick colors from an image</item>
         <item>Actions with a color</item>
-        <item>Navigation within the app</item>
+        <item>Adjust font and background</item>
+        <item>Favorites</item>
     </string-array>
 
     <string-array name="help_description">
@@ -40,19 +41,30 @@
             Click icon \"i\" (1) to open color in the \"Fullscreen\" mode.
             Parameters of the color will be displayed
             (For returning just click any place)\n
-            You have three options to save color in the \"Favorites\" a) \"Draw\" V on the color (5)
+            You have three options to save the color in the \"Favorites\" a) \"Draw\" V on the color (5)
             b) \"Double click\" on the color c) Via context menu (\"Long press\" on the color)\n
             If the color has been saved the tag with a little heart will appear on it (2).\n
             To send the color(s) parameters via email or messenger click the \"Paper plane\" (3) icon.\n
-            Click on the \"Blur\" icon (4) adds the opacity regulator to the linear control,
+            The click on the \"Blur\" icon (4) adds the opacity regulator to the linear control,
             and the click on the same (but \"crossed out\") icon will return the control
             to initial state (the color(s) will become opaque 100%).\n
             Any color you can set as a \"Wallpaper\" on your device.
             Just \"draw\" a \"heart\" (6) on the color or via context menu.
         </item>
 
-        <item>Send color(s) parameters</item>
-        <item>Navigation within the app</item>
+        <item>
+            Distinction in the \"Font and background\" mode:\n
+            Clicks on the icon \"Flip to front\" (1)
+            will connect the regulators or to the font or to the background.\n
+            In the \"Adjustable font\" screen the slider (2) will change the font size,
+            And clicks on the \"B\" or the \"I\" icons will change \"boldness\" or \"obliquely\"
+            of the font accordingly.\n
+        </item>
+
+        <item>
+            Navigation within the app
+        </item>
+
     </string-array>
 
     <array name="help_buttons">
