@@ -7,22 +7,30 @@
         <item>Context menus</item>
         <item>Color controls</item>
         <item>Pick colors from image</item>
-        <item>Send color(s) parameters</item>
+        <item>Actions with created or picked color</item>
         <item>Navigation within the app</item>
     </string-array>
 
     <string-array name="help_description">
         <item>_</item>
         <item>_</item>
-        <item>Long press on the color to open context menu.
-            Actions you can perform with the color are shown in the picture below.</item>
-        <item>Moving handles set desired value of the parameter.
+        <item>
+            Long press on the color to open context menu.
+            Actions you can perform with the color are shown in the picture below.
+        </item>
+
+        <item>
+            Moving handles set desired value of the parameter.
             Linear control: For finer tuning use buttons.
             Click on the button will change parameter by 1.
             Holding the button will move the handle smoothly.
             Round control: press the central button to set initial values of sat, val and opacity.
         </item>
-        <item>Color controls</item>
+
+        <item>
+            To open any image from device memory click on the "Gallery" icon (on top of screen).
+
+        </item>
         <item>Pick colors from image</item>
         <item>Send color(s) parameters</item>
         <item>Navigation within the app</item>
