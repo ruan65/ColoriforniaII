@@ -37,7 +37,18 @@
         </item>
 
         <item>
-            Pick colors from image
+            Click icon \"i\" (1) to open color in the \"Fullscreen\" mode.
+            Parameters of the color will be displayed
+            (For returning just click any place)\n
+            You have three options to save color in the \"Favorites\" a) \"Draw\" V on the color (5)
+            b) \"Double click\" on the color c) Via context menu (\"Long press\" on the color)\n
+            If the color has been saved the tag with a little heart will appear on it (2).\n
+            To send the color(s) parameters via email or messenger click the \"Paper plane\" (3) icon.\n
+            Click on the \"Blur\" icon (4) adds the opacity regulator to the linear control,
+            and the click on the same (but \"crossed out\") icon will return the control
+            to initial state (the color(s) will become opaque 100%).\n
+            Any color you can set as a \"Wallpaper\" on your device.
+            Just \"draw\" a \"heart\" (6) on the color or via context menu.
         </item>
 
         <item>Send color(s) parameters</item>

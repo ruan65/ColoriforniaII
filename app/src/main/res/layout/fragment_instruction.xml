@@ -1,27 +1,33 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="5dp"
     tools:context="com.engstuff.coloriphornia.fragments.FragmentInstruction">
 
-    <TextView
-        android:id="@+id/instruction_text"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:textSize="16dp" />
+        android:orientation="vertical">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:layout_below="@id/instruction_text"
-        android:layout_margin="5dp">
+        <TextView
+            android:id="@+id/instruction_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
 
         <ImageView
+            android:contentDescription="@string/description_instr_img"
             android:id="@+id/instruction_img"
+            android:layout_width="match_parent"
             android:scaleType="fitStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </ScrollView>
-</RelativeLayout>
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp" />
+    </LinearLayout>
+
+
+</ScrollView>
+
+
+    <!--android:adjustViewBounds="true"--><!---->
