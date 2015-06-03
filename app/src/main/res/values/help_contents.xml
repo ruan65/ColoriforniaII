@@ -7,7 +7,7 @@
         <item>Context menus</item>
         <item>Color controls</item>
         <item>Pick colors from image</item>
-        <item>Actions with created or picked color</item>
+        <item>Actions with a color</item>
         <item>Navigation within the app</item>
     </string-array>
 
@@ -28,10 +28,18 @@
         </item>
 
         <item>
-            To open any image from device memory click on the "Gallery" icon (on top of screen).
-
+            To open any image from the device memory click on the \"Gallery\" icon (on top of the screen).\n
+            Chosen picture you can expand or shrink (using two fingers),
+            And move it across the screen holding with a finger.
+            It allows to pick a color precisely.\n
+            The click on the image will display a color from the point that been clicked,
+            and the "aim" will jump to that point.
         </item>
-        <item>Pick colors from image</item>
+
+        <item>
+            Pick colors from image
+        </item>
+
         <item>Send color(s) parameters</item>
         <item>Navigation within the app</item>
     </string-array>
