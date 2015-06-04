@@ -1,80 +1,86 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
-    tools:context="com.engstuff.coloriphornia.fragments.FragmentNavDrawer" >
+    tools:context="com.engstuff.coloriphornia.fragments.FragmentNavDrawer">
 
-    <GridLayout
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:orientation="horizontal" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="45dp"
+        android:layout_height="wrap_content" >
 
-        <at.markushi.ui.CircleButton
-            android:id="@+id/btn_two_colors"
-            style="@style/nav_btn"
-            android:src="@drawable/ic_looks_two_white_36dp"
-            app:cb_color="@color/primaryColor"
-            app:cb_pressedRingWidth="8dip" />
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
 
-        <at.markushi.ui.CircleButton
-            android:id="@+id/btn_one_color"
-            style="@style/nav_btn"
-            android:src="@drawable/ic_tune_white_36dp"
-            app:cb_color="@color/primaryColor"
-            app:cb_pressedRingWidth="8dip" />
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_two_colors"
+                style="@style/nav_btn"
+                android:src="@drawable/ic_looks_two_white_36dp"
+                app:cb_color="@color/primaryColor"
+                app:cb_pressedRingWidth="8dip" />
 
-        <at.markushi.ui.CircleButton
-            android:id="@+id/btn_round_control_c"
-            style="@style/nav_btn"
-            android:src="@drawable/ic_track_changes_white_36dp"
-            app:cb_color="@color/primaryColor"
-            app:cb_pressedRingWidth="8dip" />
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_one_color"
+                style="@style/nav_btn"
+                android:src="@drawable/ic_tune_white_36dp"
+                app:cb_color="@color/primaryColor"
+                app:cb_pressedRingWidth="8dip" />
 
-        <at.markushi.ui.CircleButton
-            android:id="@+id/btn_img"
-            style="@style/nav_btn"
-            android:src="@drawable/ic_photo_library_white_36dp"
-            app:cb_color="@color/primaryColor"
-            app:cb_pressedRingWidth="8dip" />
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_round_control_c"
+                style="@style/nav_btn"
+                android:src="@drawable/ic_track_changes_white_36dp"
+                app:cb_color="@color/primaryColor"
+                app:cb_pressedRingWidth="8dip" />
 
-        <at.markushi.ui.CircleButton
-            android:id="@+id/btn_font"
-            style="@style/nav_btn"
-            android:src="@drawable/ic_format_quote_white_36dp"
-            app:cb_color="@color/primaryColor"
-            app:cb_pressedRingWidth="8dip" />
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_img"
+                style="@style/nav_btn"
+                android:src="@drawable/ic_photo_library_white_36dp"
+                app:cb_color="@color/primaryColor"
+                app:cb_pressedRingWidth="8dip" />
 
-        <at.markushi.ui.CircleButton
-            android:id="@+id/btn_font_solid"
-            style="@style/nav_btn"
-            android:src="@drawable/ic_format_color_text_white_36dp"
-            app:cb_color="@color/primaryColor"
-            app:cb_pressedRingWidth="8dip" />
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_font"
+                style="@style/nav_btn"
+                android:src="@drawable/ic_format_quote_white_36dp"
+                app:cb_color="@color/primaryColor"
+                app:cb_pressedRingWidth="8dip" />
 
-        <at.markushi.ui.CircleButton
-            android:id="@+id/btn_settings"
-            style="@style/nav_btn"
-            android:src="@drawable/ic_settings_white_36dp"
-            app:cb_color="@color/primaryColor"
-            app:cb_pressedRingWidth="8dip" />
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_font_solid"
+                style="@style/nav_btn"
+                android:src="@drawable/ic_format_color_text_white_36dp"
+                app:cb_color="@color/primaryColor"
+                app:cb_pressedRingWidth="8dip" />
 
-        <at.markushi.ui.CircleButton
-            android:id="@+id/btn_favorite"
-            style="@style/nav_btn"
-            android:src="@drawable/ic_favorite_white_36dp"
-            app:cb_color="@color/primaryColor"
-            app:cb_pressedRingWidth="8dip" />
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_settings"
+                style="@style/nav_btn"
+                android:src="@drawable/ic_settings_white_36dp"
+                app:cb_color="@color/primaryColor"
+                app:cb_pressedRingWidth="8dip" />
 
-        <at.markushi.ui.CircleButton
-            android:id="@+id/btn_nav_help"
-            style="@style/nav_btn"
-            android:src="@drawable/ic_help_white_36dp"
-            app:cb_color="@color/primaryColor"
-            app:cb_pressedRingWidth="8dip" />
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_favorite"
+                style="@style/nav_btn"
+                android:src="@drawable/ic_favorite_white_36dp"
+                app:cb_color="@color/primaryColor"
+                app:cb_pressedRingWidth="8dip" />
 
-    </GridLayout>
-</RelativeLayout>
+            <at.markushi.ui.CircleButton
+                android:id="@+id/btn_nav_help"
+                style="@style/nav_btn"
+                android:src="@drawable/ic_help_white_36dp"
+                app:cb_color="@color/primaryColor"
+                app:cb_pressedRingWidth="8dip" />
+
+        </GridLayout>
+    </RelativeLayout>
+</ScrollView>

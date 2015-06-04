@@ -24,10 +24,7 @@
             android:layout_height="wrap_content"
             android:paddingRight="10dp"
             android:paddingTop="5dp" />
+
     </LinearLayout>
 
-
 </ScrollView>
-
-
-    <!--android:adjustViewBounds="true"--><!---->
