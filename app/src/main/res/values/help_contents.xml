@@ -44,7 +44,7 @@
             You have three options to save the color in the \"Favorites\" a) \"Draw\" V on the color (5)
             b) \"Double click\" on the color c) Via context menu (\"Long press\" on the color)\n
             If the color has been saved the tag with a little heart will appear on it (2).\n
-            To send the color(s) parameters via email or messenger click the \"Paper plane\" (3) icon.\n
+            To send the color(s) parameters via email or messenger click the \"Send\" (3) icon.\n
             The click on the \"Blur\" icon (4) adds the opacity regulator to the linear control,
             and the click on the same (but \"crossed out\") icon will return the control
             to initial state (the color(s) will become opaque 100%).\n
@@ -62,7 +62,18 @@
         </item>
 
         <item>
-            Favorites
+            Click any color to open it in the \"Full Screen\"
+            (then you can swipe the screen to the left / right
+            to get next or previous color accordingly).\n
+            \"Long click\" on any color to select it for sending or deleting.
+            Chosen colors will be marked by \"V\" sign (5).
+            If at least one color is selected, simple click on the color will select (or deselect) it.\n
+            You can choose all saved colors simultaneously by clicking on the \"Select all\" (1) icon.\n
+            Also, if at least one color is selected, three new icons will appear on the action bar:\n
+            (2) \"Undo\" - simultaneously deselects all marked colors;\n
+            (3) \"Delete\" - pops up the dialog: \"All checked colors will be erased. Proceed?\";\n
+            (4) \"Send\" - for sending parameters of colors that have been selected
+            via email or Messenger.
         </item>
 
     </string-array>
