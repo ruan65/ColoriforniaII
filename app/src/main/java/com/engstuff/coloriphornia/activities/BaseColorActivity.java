@@ -56,7 +56,9 @@ public abstract class BaseColorActivity extends MockUpActivity implements
     public void onResume() {
         super.onResume();
 
-        registerForContextMenu(fragmentColorBox.getView());
+        if (fragmentColorBox.getView() != null) {
+            registerForContextMenu(fragmentColorBox.getView());
+        }
     }
 
     @Override
@@ -138,15 +140,18 @@ public abstract class BaseColorActivity extends MockUpActivity implements
 
                 if (f.getClass().equals(FragmentColorBox.class)) {
 
-                    result.append("<p>" + ColorParams.composeInfoHTML(this,
-                            ((FragmentColorBox) f).getHexColorParams()) + "</p>");
+                    result.append(makeInfo(((FragmentColorBox) f)));
                 }
             }
         } else {
-            result.append("<p>" + ColorParams.composeInfoHTML(this,
-                    currentColorBox.getHexColorParams()) + "</p>");
+            result.append(makeInfo(currentColorBox));
         }
         return result.toString();
+    }
+
+    private String makeInfo(FragmentColorBox f) {
+        return "<p>" + ColorParams.composeInfoHTML(this,
+                f.getHexColorParams()) + "</p>";
     }
 
     protected void switchInfo(int p, int id) {
