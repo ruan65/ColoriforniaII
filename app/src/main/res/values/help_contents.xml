@@ -79,12 +79,7 @@
         </item>
 
         <item>
-            Click on the icon \"-\" (3) to hide parameters of the color,
-            And click on the icon \"+"\ (1) to open parameters.\n
-            Icon \"Send\" is for sending color parameters via email or Messenger.\n
-            To return to the previous screen just click any place.\n
-            If you came to the \"Full screen\" mode from the "Favorites",
-            Flip the screen to review saved colors.
+            Click on the icon \"-\" (3) to hide parameters of the color, And click on the icon \"+\" (1) to open the parameters.\nIcon \"Send\" is for sending color parameters via email or Messenger.\nTo return to the previous screen just click any place.\nIf you came to the \"Full screen\" mode from the "Favorites", Flip the color to review saved colors.
         </item>
 
     </string-array>
@@ -96,15 +91,19 @@
         <item>Show the color\' opacity regulator.</item>
         <item>Hide the color\' opacity regulator.</item>
         <item>Click on this icon will open color(s) in the \"Fullscreen\" mode
-            and provide color\' parameters.</item>
+            and provide color\' parameters.
+        </item>
         <item>Pick a photograph taken by the device camera or an image from a gallery.</item>
         <item>Indicates that this color has been saved to favorites.
-            Click on this icon to  open the \"Favorites\" screen.</item>
+            Click on this icon to open the \"Favorites\" screen.
+        </item>
         <item>Shows a point on the image that has been clicked. Color from this point is displayed.
             Clicking on other points will move the \"Aim\".
-            It\'s also possible to move the image under the \"Aim\".</item>
+            It\'s also possible to move the image under the \"Aim\".
+        </item>
         <item>Reset values of the color parameters (saturation, value and opacity) to 100%.
-            (For the "round" color control only)</item>
+            (For the "round" color control only)
+        </item>
         <item>Move the font to front for color adjusting.</item>
         <item>Move the background to front for color adjusting.</item>
         <item>Bold / Normal font selector.</item>
@@ -112,7 +111,8 @@
         <item>In the \"Fullscreen\" mode reveals color(s) parameters info.</item>
         <item>In the \"Fullscreen\" mode hides color(s) parameters info.</item>
         <item>In the \"Favorites\" mode deletes \"checked\" colors.</item>
-        <item>In the \"Favorites\" mode shows that color is \"checked\" for sending or deleting.</item>
+        <item>In the \"Favorites\" mode shows that color is \"checked\" for sending or deleting.
+        </item>
         <item>In the \"Favorites\" mode is used for selecting all colors.</item>
         <item>In the \"Favorites\" mode is used for deselecting all selected colors.</item>
     </array>

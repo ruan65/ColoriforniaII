@@ -34,10 +34,10 @@
     <string name="ctx_to_prev_screen">К предыдущему экрану</string>
     <string name="ctx_undo">Отмена</string>
     <string name="sb_wb_deleted">\n\nбудут удалены</string>
-    <string name="green">"зеленый: "</string>
-    <string name="red" translatable="false">"красный: "</string>
-    <string name="blue">"синий: "</string>
-    <string name="alpha">"альфа: "</string>
+    <string name="green">зеленый: </string>
+    <string name="red">красный: </string>
+    <string name="blue">синий: </string>
+    <string name="alpha">альфа: </string>
     <string name="email_subject">Цвета подобранные с помощью \"Colorifornia\".</string>
     <string name="chooser_title">Отправка параметров цвета(ов)</string>
     <string name="hint_op_image_title">Подсказка</string>
@@ -55,6 +55,7 @@
     <string name="del_color_title">Удалить отмеченные?</string>
     <string name="del_colors_msg">Все выбранные цвета будут удалены. Продолжить?</string>
     <string name="del_colors_msg_nothing">Не выбраны цвета. Нечего удалять.</string>
+    <string name="title_activity_help">Справка</string>
 
     <string name="info_about">
 
@@ -86,6 +87,5 @@ colorifornia@yahoo.com\n
 Andrew (разработчик)
 
     </string>
-    <string name="prefs_help_title" translatable="false">Справка</string>
-    <string name="title_activity_help">Справка</string>
+    <string name="prefs_help_title">Справка</string>
 </resources>
