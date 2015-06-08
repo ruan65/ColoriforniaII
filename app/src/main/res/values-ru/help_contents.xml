@@ -8,8 +8,8 @@
         <item>Выбор цвета из картинки</item>
         <item>Действия с выбранным цветом</item>
         <item>Подбор цветов шрифта и фона</item>
-        <item>\"Избранные\" цвета</item>
-        <item>\"Полноэкранный\" режим</item>
+        <item>Избранные цвета</item>
+        <item>Полноэкранный режим</item>
     </string-array>
 
     <string-array name="help_description">

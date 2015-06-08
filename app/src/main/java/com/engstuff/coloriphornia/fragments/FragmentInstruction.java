@@ -44,6 +44,7 @@ public class FragmentInstruction extends Fragment {
         } else {
 
             root = new ListView(ctx);
+            ((ListView) root).setDivider(null);
             ((ListView) root).setSelector(android.R.color.transparent);
             ((ListView) root).setAdapter(createAdapter());
         }

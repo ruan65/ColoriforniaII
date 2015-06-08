@@ -17,6 +17,11 @@ public class FullScreenColorCC extends Activity implements OnFlingListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_screen_color_cc);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
 
         getWindow().setFlags(FLAG_FULLSCREEN, FLAG_FULLSCREEN);
         Intent intent = getIntent();
@@ -31,11 +36,6 @@ public class FullScreenColorCC extends Activity implements OnFlingListener {
                 .add(R.id.frame_full_screen_color_1, fragment1)
                 .add(R.id.frame_full_screen_color_2, fragment2)
                 .commit();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
         overridePendingTransition(R.anim.slide_in_l, R.anim.slide_out_l);
     }
 

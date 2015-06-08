@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.engstuff.coloriphornia.R;
@@ -35,6 +36,7 @@ public class FragmentFullScreenColor extends Fragment {
 
     private Activity activity;
     private String hexBackColorString, hexFontColorString;
+    RelativeLayout root;
 
     private Animation hideAnim, btnFadeInAnim, showAnim, btnFadeOutAnim;
 
@@ -83,7 +85,7 @@ public class FragmentFullScreenColor extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_full_screen_color, container, false);
+        root = (RelativeLayout) inflater.inflate(R.layout.fragment_full_screen_color, container, false);
 
         ButterKnife.inject(this, root);
 
