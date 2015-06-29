@@ -158,7 +158,7 @@ public abstract class BaseColorActivity extends MockUpActivity implements
 
         progress.setVisibility(View.VISIBLE);
 
-        String val = String.valueOf(p);
+        String val = String.valueOf(p) + " (hex: " + Integer.toString(p, 16) + ")";
 
         switch (id) {
 

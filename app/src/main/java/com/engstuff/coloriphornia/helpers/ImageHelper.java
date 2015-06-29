@@ -56,19 +56,29 @@ public abstract class ImageHelper {
     }
 
     public static String getRealImagePath(Context ctx, Uri uri){
-        Cursor cursor = ctx.getContentResolver().query(uri, null, null, null, null);
-        cursor.moveToFirst();
-        String document_id = cursor.getString(0);
-        document_id = document_id.substring(document_id.lastIndexOf(":")+1);
-        cursor.close();
 
-        cursor = ctx.getContentResolver().query(
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                null, MediaStore.Images.Media._ID + " = ? ", new String[]{document_id}, null);
-        cursor.moveToFirst();
-        String path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
-        cursor.close();
+        Cursor cursor = null;
+        String path = null;
+        String document_id;
 
+        try {
+            cursor = ctx.getContentResolver().query(uri, null, null, null, null);
+            cursor.moveToFirst();
+            document_id = cursor.getString(0);
+            document_id = document_id.substring(document_id.lastIndexOf(":")+1);
+        } finally {
+            if (cursor != null) cursor.close();
+        }
+
+        try {
+            cursor = ctx.getContentResolver().query(
+                    android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                    null, MediaStore.Images.Media._ID + " = ? ", new String[]{document_id}, null);
+            cursor.moveToFirst();
+            path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+        } finally {
+            if (cursor != null) cursor.close();
+        }
         return path;
     }
 }
